@@ -56,60 +56,107 @@
         font-size: 1.8em;
     }
     
-    /* Lab Info Section */
-    .lab-info {
-        display: flex;
-        align-items: center;  /* Vertically center */
-        gap: 30px;
-        margin: 30px 0;
-        padding: 30px;
-        background: #f8f9fa;
-        border-radius: 10px;
-        border-left: 4px solid #2c5aa0;
-    }
-    
-    .lab-logo {
-        width: 150px;
-        height: 150px;
-        flex-shrink: 0;
-        object-fit: contain;
-        display: block;
-        background: #f8f9fa;  /* Match section background */
-        border-radius: 8px;
-        padding: 10px;
-    }
-    
-    .lab-details {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;  /* Center text vertically */
-    }
-    
-    .lab-details h3 {
-        margin: 0 0 15px 0;
-        color: #2c5aa0;
-        font-size: 1.4em;
-        line-height: 1.3;
-    }
-    
-    .lab-details p {
-        margin: 6px 0;
-        color: #555;
-        line-height: 1.8;
-        font-size: 1em;
-    }
-    
-    .lab-details strong {
-        color: #2c3e50;
-        font-weight: 600;
-    }        
-        @media (max-width: 768px) {
-            .lab-info {
-                flex-direction: column;
-                text-align: center;
-            }
-            
+        /* Lab Header Section - Two Columns */
+        .lab-header {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            align-items: center;
+        }
+        
+        /* Lab Logo Column */
+        .lab-logo-section {
+            text-align: center;
+        }
+        
+        .lab-logo {
+            width: 250px;
+            height: 250px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 20px auto;
+        }
+        
+        .lab-logo-section h2 {
+            font-size: 1.1em;
+            color: #2c5aa0;
+            margin-top: 10px;
+            line-height: 1.4;
+        }
+        
+        /* Leader Info Column */
+        .leader-info {
+            padding-left: 30px;
+            border-left: 3px solid #2c5aa0;
+        }
+        
+        .leader-info h1 {
+            font-size: 2.2em;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .leader-info .title {
+            font-size: 1.3em;
+            color: #2c5aa0;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .leader-info .affiliation {
+            font-size: 1.05em;
+            color: #555;
+            margin-bottom: 8px;
+            line-height: 1.8;
+        }
+        
+        .leader-info .contact {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .leader-info .contact p {
+            color: #666;
+            margin: 8px 0;
+        }
+        
+        .leader-info .contact a {
+            color: #2c5aa0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .leader-info .contact a:hover {
+            color: #1a3d6b;
+            text-decoration: underline;
+        }
+        
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+        
+        .social-icons a:hover {
+            transform: translateY(-3px);
+        }
+        
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
         }
     </style>
 		
@@ -130,8 +177,48 @@
 				
 			</header>
  -->			<!-- One -->
+     
+        <!-- Lab Header: Logo Left, Leader Info Right -->
+        <section class="lab-header">
+            <!-- Left Column: Lab Logo -->
+            <div class="lab-logo-section">
+                <img src="kclab_transparent.png" alt="Knowledge Computing Lab Logo" class="lab-logo">
+                <h2>Knowledge Computing Lab<br>知識計算實驗室</h2>
+            </div>
+            
+            <!-- Right Column: Leader Information -->
+            <div class="leader-info">
+                <h1>Meng-Fen Chiang<br><span style="font-size: 0.7em; color: #666;">江孟芬</span></h1>
+                
+                <p class="title">Assistant Professor</p>
+                
+                <div class="affiliation">
+                    <p>Department of Electronics and Electrical Engineering (ECE)</p>
+                    <p>National Yang Ming Chiao Tung University (NYCU)</p>
+                </div>
+                
+                <div class="contact">
+                    <p><strong>Office:</strong> 528-5</p>
+                    <p><strong>Email:</strong> <a href="mailto:meng.chiang@nycu.edu.tw">meng.chiang[at]nycu.edu.tw</a></p>
+                </div>
+                
+                <!-- Social Icons -->
+                <div class="social-icons">
+                    <a href="#" target="_blank" title="Google Scholar">
+                        <img src="https://cdn.simpleicons.org/googlescholar/4285F4" alt="Google Scholar">
+                    </a>
+                    <a href="#" target="_blank" title="LinkedIn">
+                        <img src="https://cdn.simpleicons.org/linkedin/0A66C2" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/ankechiang" target="_blank" title="GitHub">
+                        <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub">
+                    </a>
+                </div>
+            </div>
+        </section>
+<!-- 
 			<section id="about" class="wrapper style2 special">
-        		<!-- Knowledge Computing Lab Info -->
+        		<!~~ Knowledge Computing Lab Info ~~>
         		<div class="lab-info">
             		<img src="images/kclab.png" alt="Knowledge Computing Lab Logo" class="lab-logo">
             		<div class="lab-details">
@@ -153,6 +240,7 @@
 					<div>E-mail: meng.chiang[at]nycu.edu.tw</div>
 				</div>
 			</section>
+ -->
 
 
 		<!-- Two -->
