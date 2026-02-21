@@ -59,47 +59,51 @@
     /* Lab Info Section */
     .lab-info {
         display: flex;
-        align-items: flex-start;
-        gap: 25px;
-        margin: 25px 0;
-        padding: 25px;
+        align-items: center;  /* Vertically center */
+        gap: 30px;
+        margin: 30px 0;
+        padding: 30px;
         background: #f8f9fa;
-        border-radius: 8px;
+        border-radius: 10px;
         border-left: 4px solid #2c5aa0;
     }
     
     .lab-logo {
-        width: 140px;
-        height: 140px;
+        width: 150px;
+        height: 150px;
         flex-shrink: 0;
         object-fit: contain;
         display: block;
+        background: #f8f9fa;  /* Match section background */
+        border-radius: 8px;
+        padding: 10px;
     }
     
     .lab-details {
         flex: 1;
-        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;  /* Center text vertically */
     }
     
     .lab-details h3 {
-        margin: 0 0 12px 0;
+        margin: 0 0 15px 0;
         color: #2c5aa0;
-        font-size: 1.3em;
+        font-size: 1.4em;
         line-height: 1.3;
     }
     
     .lab-details p {
-        margin: 8px 0;
+        margin: 6px 0;
         color: #555;
-        line-height: 1.6;
-        font-size: 0.95em;
+        line-height: 1.8;
+        font-size: 1em;
     }
     
     .lab-details strong {
         color: #2c3e50;
         font-weight: 600;
-    }
-        
+    }        
         @media (max-width: 768px) {
             .lab-info {
                 flex-direction: column;
@@ -129,7 +133,7 @@
 			<section id="about" class="wrapper style2 special">
         		<!-- Knowledge Computing Lab Info -->
         		<div class="lab-info">
-            		<img src="kclab.png" alt="Knowledge Computing Lab Logo" class="lab-logo">
+            		<img src="images/kclab.png" alt="Knowledge Computing Lab Logo" class="lab-logo">
             		<div class="lab-details">
                 		<h3>Knowledge Computing Lab (知識計算實驗室)</h3>
                 		<p><strong>Affiliation:</strong> National Yang Ming Chiao Tung University</p>
@@ -236,13 +240,13 @@
 							<h3>Publiciations</h3>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Multigranular Alignment via Linguistic Decomposition and Reward Optimization for Text to Image Diffusion </strong><br></span><span></span>
-	                                <div>Hengrui Liu, Luming Jin, Meng-Fen Chiang.</div> 
+	                                <p class="authors">Hengrui Liu, Luming Jin, Meng-Fen Chiang.</p> 
 	                            	<div>International Conference on Autonomous Agents and Multiagent Systems (AAMAS), 2026</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>	
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Relation-Aware Multimodal Analogical Reasoning with Modality Fingerprints and Adaptive Gating </strong><br></span><span></span>
-	                                <div>Ruofan Wang, Zijian Huang, Qiqi Wang, Yuchen Su, Robert Amor, Kaiqi Zhao, Meng-Fen Chiang.</div> 
+	                                <p class="authors">Ruofan Wang, Zijian Huang, Qiqi Wang, Yuchen Su, Robert Amor, Kaiqi Zhao, Meng-Fen Chiang.</p> 
 	                            	<div>The Web Conference (WWW), 2026</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>	
@@ -254,193 +258,193 @@
 	                        </div></br>		                        	                        
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Metric-Guided Instance Re-weighting for Reliable Explainability </strong><br></span><span></span>
-	                                <div>Yibo Huang, Zixin Kuang, Meng-Fen Chiang, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee.</a></div> 
+	                                <p class="authors">Yibo Huang, Zixin Kuang, Meng-Fen Chiang, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee.</a></p> 
 	                            	<div>International Conference on Data Mining (ICDM), 2025</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>	
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>S-RAG: A Novel Audit Framework for Detecting Unauthorized Use of Personal Data in RAG Systems </strong>[<a href="https://aclanthology.org/2025.acl-long.512/">pdf</a>]<br></span><span></span>
-	                                <div>Zhirui Zeng, Jiamou Liu, Meng-Fen Chiang, Jialing He, Zijian Zhang. </div> 
+	                                <p class="authors">Zhirui Zeng, Jiamou Liu, Meng-Fen Chiang, Jialing He, Zijian Zhang. </p> 
 	                            	<div>Annual Meeting of the Association for Computational Linguistics (ACL), 2025</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>		                        							
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>A Shapley-value Guided Rationale Editor for Rationale Learning </strong>[<a href="https://proceedings.mlr.press/v258/kuang25a.html">pdf</a>]<br></span><span></span>
-	                                <div>Zixin Kuang, Meng-Fen Chiang, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee.</a></div> 
+	                                <p class="authors">Zixin Kuang, Meng-Fen Chiang, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee.</a></p> 
 	                            	<div>International Conference on Artificial Intelligence and Statistics (AISTATS), 2025</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>								
 	                        <div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>NKT: Evidence-aware Inference for Neutralized Zero-shot Transfer </strong>[<a href="https://aclanthology.org/2024.lrec-main.590/">pdf</a>]<br></span><span></span>
-	                                <div>Xiaotong Feng, Meng-Fen Chiang, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee, </a>Zixin Kuang.</div> 
+	                                <p class="authors">Xiaotong Feng, Meng-Fen Chiang, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee, </a>Zixin Kuang.</p> 
 	                            	<div>International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING), 2024</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>								
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>LinE: Logical Query Reasoning over Hierarchical Knowledge Graphs </strong>[<a href="https://dl.acm.org/doi/abs/10.1145/3534678.3539338">pdf</a>]<br></span><span></span>
-	                                <div><a href="https://nelsonhuangzijian.github.io/">Zijian Huang</a>, Meng-Fen Chiang, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee.</a></div> 
+	                                <p class="authors"><a href="https://nelsonhuangzijian.github.io/">Zijian Huang</a>, Meng-Fen Chiang, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee.</a></p> 
 	                            	<div>International Conference on Knowledge Discovery and Data Mining (SIGKDD), 2022</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>							
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Cost-Effective Knowledge Graph Reasoning for Complex Factoid Questions </strong>[<a href="https://ieeexplore.ieee.org/abstract/document/9533753">pdf</a>]<br></span><span></span>
-	                                <div>Xia Yang, Meng-Fen Chiang, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee</a>, <a href="http://yichang-cs.com">Yi Chang</a>.</div> 
+	                                <p class="authors">Xia Yang, Meng-Fen Chiang, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee</a>, <a href="http://yichang-cs.com">Yi Chang</a>.</p> 
 	                            	<div>International Joint Conference on Neural Networks (IJCNN), 2021</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>CO2Vec: Embeddings of Co-Ordered Networks Based on Mutual Reinforcement </strong>[<a href="https://ieeexplore.ieee.org/document/9260062">pdf</a>]<br></span><span></span>
-	                                <div>Meng-Fen Chiang, <a href="https://faculty.smu.edu.sg/profile/lim-ee-peng-616">Ee-Peng Lim</a>, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee</a>, Philips Kokoh Prasetyo.</div> 
+	                                <p class="authors">Meng-Fen Chiang, <a href="https://faculty.smu.edu.sg/profile/lim-ee-peng-616">Ee-Peng Lim</a>, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee</a>, Philips Kokoh Prasetyo.</p> 
 	                            	<div>International Conference on Data Science and Advanced Analytics (DSAA), 2020	</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>One-Class Order Embedding for Dependency Relation Prediction </strong>[<a href="https://dl.acm.org/doi/10.1145/3331184.3331249">pdf</a>]<br></span><span></span>
-	                                <div>Meng-Fen Chiang, <a href="https://faculty.smu.edu.sg/profile/lim-ee-peng-616">Ee-Peng Lim</a>, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee</a>, Xavier Jayaraj Siddarth Ashok, Philips Kokoh Prasetyo.</div> 
+	                                <p class="authors">Meng-Fen Chiang, <a href="https://faculty.smu.edu.sg/profile/lim-ee-peng-616">Ee-Peng Lim</a>, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee</a>, Xavier Jayaraj Siddarth Ashok, Philips Kokoh Prasetyo.</p> 
 	                            	<div>International Conference on Research and Development in Information Retrieval (SIGIR), 2019	</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Inferring Trip Occupancies in the Rise of Ride-Hailing Services </strong>[<a href="https://dl.acm.org/doi/abs/10.1145/3269206.3272025">pdf</a>]<br></span><span></span>
-	                                <div>Meng-Fen Chiang, <a href="https://faculty.smu.edu.sg/profile/lim-ee-peng-616">Ee-Peng Lim</a>, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee</a>, Tuan-Anh Hoang.</div> 
+	                                <p class="authors">Meng-Fen Chiang, <a href="https://faculty.smu.edu.sg/profile/lim-ee-peng-616">Ee-Peng Lim</a>, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee</a>, Tuan-Anh Hoang.</p> 
 	                            	<div>International Conference on Information and Knowledge Management (CIKM), 2018	</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Traffic-Cascade: Mining and Visualizing Lifecycles of Traffic Congestion Events Using Public Bus Trajectories (Demo Paper) </strong><br></span><span></span>
-	                                <div>Agus Trisnajaya Kwee, Meng-Fen Chiang, Philips Kokoh Prasetyo, <a href="https://faculty.smu.edu.sg/profile/lim-ee-peng-616">Ee-Peng Lim</a>.</div> 
+	                                <p class="authors">Agus Trisnajaya Kwee, Meng-Fen Chiang, Philips Kokoh Prasetyo, <a href="https://faculty.smu.edu.sg/profile/lim-ee-peng-616">Ee-Peng Lim</a>.</p> 
 	                            	<div>International Conference on Information and Knowledge Management (CIKM), 2018	</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>	                        
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Content quality filtering without use of content </strong>[<a href="https://patents.google.com/patent/US9836539B2/en">link</a>]<br></span><span></span>
-	                                <div>Meng-Fen Chiang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>.</div> 
+	                                <p class="authors">Meng-Fen Chiang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>.</p> 
 	                            	<div>US Patent US9213772B2, 2017	</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>BTCI: A new framework for identifying congestion cascades using bus trajectory data </strong>[<a href="https://ieeexplore.ieee.org/abstract/document/8258039">pdf</a>]<br></span><span></span>
-	                                <div>Meng-Fen Chiang, <a href="https://faculty.smu.edu.sg/profile/lim-ee-peng-616">Ee-Peng Lim</a>, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee</a>, Agus Trisnajaya Kwee.</div> 
+	                                <p class="authors">Meng-Fen Chiang, <a href="https://faculty.smu.edu.sg/profile/lim-ee-peng-616">Ee-Peng Lim</a>, <a href="https://sites.psu.edu/wlee/">Wang-Chien Lee</a>, Agus Trisnajaya Kwee.</p> 
 	                            	<div>IEEE BigData 2017	</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>	                        
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Mining and clustering mobility evolution patterns from social media for urban informatics </strong><br></span><span></span>
-	                                <div>Chien-Cheng Chen, Meng-Fen Chiang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>.</div> 
+	                                <p class="authors">Chien-Cheng Chen, Meng-Fen Chiang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>.</p> 
 	                            	<div>Knowledge and Information Systems (KAIS), 2016	</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Trajectory pattern mining: Exploring semantic and time information </strong><br></span><span></span>
-	                                <div>Chien-Cheng Chen, Meng-Fen Chiang.</div> 
+	                                <p class="authors">Chien-Cheng Chen, Meng-Fen Chiang.</p> 
 	                            	<div>International Conference on Technologies and Applications of Artificial Intelligence (TAAI), 2016	</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>On Mining Lifestyles from User Trip Data </strong>[<a href="https://dl.acm.org/doi/10.1145/2808797.2808906">pdf</a>]<br></span><span></span>
-	                                <div>Meng-Fen Chiang, <a href="https://faculty.smu.edu.sg/profile/lim-ee-peng-616">Ee-Peng Lim</a>, Jia-Wei Low.</div> 
+	                                <p class="authors">Meng-Fen Chiang, <a href="https://faculty.smu.edu.sg/profile/lim-ee-peng-616">Ee-Peng Lim</a>, Jia-Wei Low.</p> 
 	                            	<div>International Conference on Advances in Social Networks Analysis and Mining (ASONAM), 2015	</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Where are the passengers?: a grid-based gaussian mixture model for taxi bookings </strong>[<a href="https://dl.acm.org/doi/10.1145/2820783.2820807">pdf</a>]<br></span><span></span>
-	                                <div>Meng-Fen Chiang, Tuan-Anh Hoang, <a href="https://faculty.smu.edu.sg/profile/lim-ee-peng-616">Ee-Peng Lim</a>.</div> 
+	                                <p class="authors">Meng-Fen Chiang, Tuan-Anh Hoang, <a href="https://faculty.smu.edu.sg/profile/lim-ee-peng-616">Ee-Peng Lim</a>.</p> 
 	                            	<div>International Conference on Advances in Geographic Information Systems (SIGSPATIAL/GIS), 2015 </em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Inferring potential users in mobile social networks </strong><br></span><span></span>
-	                                <div>Tsung-Hao Hsu, Chien-Cheng Chen, Meng-Fen Chiang, Kuo-Wei Hsu, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>.</div> 
+	                                <p class="authors">Tsung-Hao Hsu, Chien-Cheng Chen, Meng-Fen Chiang, Kuo-Wei Hsu, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>.</p> 
 	                            	<div>International Conference on Data Science and Advanced Analytics (DSAA), 2014 </em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Mining Mobility Evolution from Check-In Datasets </strong>[<a href="https://ieeexplore.ieee.org/document/6916921">pdf</a>]<br></span><span></span>
-	                                <div>Meng-Fen Chiang, Chien-Cheng Chen, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>, <a href="https://cs.uic.edu/profiles/philip-yu/">Philip S. Yu</a>.</div> 
+	                                <p class="authors">Meng-Fen Chiang, Chien-Cheng Chen, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>, <a href="https://cs.uic.edu/profiles/philip-yu/">Philip S. Yu</a>.</p> 
 	                            	<div>International Conference on Mobile Data Management (MDM), 2014 </em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Dynamic Circle Recommendation: A Probabilistic Model </strong><br></span><span></span>
-	                                <div>Fan-Kai Chou, Meng-Fen Chiang, Yi-Cheng Chen, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>.</div> 
+	                                <p class="authors">Fan-Kai Chou, Meng-Fen Chiang, Yi-Cheng Chen, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>.</p> 
 	                            	<div>The Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD), 2014 </em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Exploring heterogeneous information networks and random walk with restart for academic search </strong>[<a href="https://www.springerprofessional.de/en/exploring-heterogeneous-information-networks-and-random-walk-wit/11688002">pdf</a>]<br></span><span></span>
-	                                <div>Meng-Fen Chiang, Jiun-Jiue Liou, Jen-Liang Wang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>, Man-Kwan Shan.</div> 
+	                                <p class="authors">Meng-Fen Chiang, Jiun-Jiue Liou, Jen-Liang Wang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>, Man-Kwan Shan.</p> 
 	                            	<div>Knowledge and Information Systems (KAIS), 2013 </em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>	 
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Inferring distant-time location in low-sampling-rate trajectories (Demo Paper) </strong>[<a href="https://dl.acm.org/doi/abs/10.1145/2487575.2487707">pdf</a>]<br></span><span></span>
-	                                <div>Meng-Fen Chiang, Yung-Hsiang Lin, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>, <a href="https://cs.uic.edu/profiles/philip-yu/">Philip S. Yu</a>.</div> 
+	                                <p class="authors">Meng-Fen Chiang, Yung-Hsiang Lin, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>, <a href="https://cs.uic.edu/profiles/philip-yu/">Philip S. Yu</a>.</p> 
 	                            	<div>International Conference on Knowledge Discovery and Data Mining (SIGKDD), 2013 </em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>		
 	                       	<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>A Temporal Probabilistic Model for Dynamic Circle Recommendation in Mobile Applications </strong><br></span><span></span>
-	                                <div>Fan-Kai Chou, Meng-Fen Chiang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>.</div> 
+	                                <p class="authors">Fan-Kai Chou, Meng-Fen Chiang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>.</p> 
 	                            	<div>International Conference on Mobile Data Management (MDM), 2013 </em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br> 
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Distant-Time Location Prediction in Low-Sampling-Rate Trajectories </strong>[<a href="https://ieeexplore.ieee.org/document/6569128">pdf</a>]<br></span><span></span>
-	                                <div>Meng-Fen Chiang, Wen-Yuan Zhu, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>, <a href="https://cs.uic.edu/profiles/philip-yu/">Philip S. Yu</a>.</div> 
+	                                <p class="authors">Meng-Fen Chiang, Wen-Yuan Zhu, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>, <a href="https://cs.uic.edu/profiles/philip-yu/">Philip S. Yu</a>.</p> 
 	                            	<div>International Conference on Mobile Data Management (MDM), 2013 </em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>	
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Exploring latent browsing graph for question answering recommendation </strong>[<a href="https://link.springer.com/article/10.1007%2Fs11280-011-0146-0">pdf</a>]<br></span><span></span>
-	                                <div>Meng-Fen Chiang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>, <a href="https://cs.uic.edu/profiles/philip-yu/">Philip S. Yu</a>.</div> 
+	                                <p class="authors">Meng-Fen Chiang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>, <a href="https://cs.uic.edu/profiles/philip-yu/">Philip S. Yu</a>.</p> 
 	                            	<div>World Wide Web 2013 </em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>	  	                        
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Inferring social relationships across social networks for viral marketing </strong>[<a href="https://ieeexplore.ieee.org/document/6395021">pdf</a>]<br></span><span></span>
-	                                <div>Tsung-Hao Hsu, Meng-Fen Chiang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>.</div> 
+	                                <p class="authors">Tsung-Hao Hsu, Meng-Fen Chiang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>.</p> 
 	                            	<div>International Conference on Technologies and Applications of Artificial Intelligence (TAAI), 2012 </em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>	
 	                       	<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>An event-based POI service from microblogs </strong><br></span><span></span>
-	                                <div>Chun-Shuo Lin, Meng-Fen Chiang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>, Chien-Cheng Chen.</div> 
+	                                <p class="authors">Chun-Shuo Lin, Meng-Fen Chiang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>, Chien-Cheng Chen.</p> 
 	                            	<div>APNOMS 2011 </em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br> 
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Parallelizing random walk with restart for large-scale query recommendation </strong>[<a href="https://dl.acm.org/doi/10.1145/1779599.1779607">pdf</a>]</span><span></span>
-	                                <div>Meng-Fen Chiang, Tsung-Wei Wang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>.</div> 
+	                                <p class="authors">Meng-Fen Chiang, Tsung-Wei Wang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>.</p> 
 	                            	<div>WWW 2010 Workshop on Massive Data Analytics over the Cloud (MDAC) 2013 </em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>		                        
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Emotion-based music recommendation by affinity discovery from film music </strong><br></span><span></span>
-	                                <div>Man-Kwan Shan, Fang-Fei Kuo, Meng-Fen Chiang, Suh-Yin Lee.</div> 
+	                                <p class="authors">Man-Kwan Shan, Fang-Fei Kuo, Meng-Fen Chiang, Suh-Yin Lee.</p> 
 	                            	<div>Expert Systems with Applications 2009 </em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Relevance feedback for category search in music retrieval based on semantic concept learning </strong><br></span><span></span>
-	                                <div>Man-Kwan Shan, Meng-Fen Chiang, Fang-Fei Kuo, Suh-Yin Lee.</div> 
+	                                <p class="authors">Man-Kwan Shan, Meng-Fen Chiang, Fang-Fei Kuo, Suh-Yin Lee.</p> 
 	                            	<div>Multimedia Tools and Applications 2008 </em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Discovering popular co-cited communities in blogspaces </strong><br></span><span></span>
-	                                <div>Meng-Fen Chiang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>, Chia-Hao Lo.</div> 
+	                                <p class="authors">Meng-Fen Chiang, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>, Chia-Hao Lo.</p> 
 	                            	<div>International Conference on Data Engineering (ICDE) Workshop 2008 </em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Ranking Web Pages from User Perspectives of Social Bookmarking Sites </strong><br></span><span></span>
-	                                <div>Chia-Hao Lo, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>, Meng-Fen Chiang.</div> 
+	                                <p class="authors">Chia-Hao Lo, <a href="https://sites.google.com/site/wcpeng/">Wen-Chih Peng</a>, Meng-Fen Chiang.</p> 
 	                            	<div>International Conference on Web Intelligence and Intelligent Agent Technology (Web Intelligence) 2008 </em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Emotion-based music recommendation by association discovery from film music </strong><br></span><span></span>
-	                                <div>Fang-Fei Kuo, Meng-Fen Chiang, Man-Kwan Shan, Suh-Yin Lee.</div> 
+	                                <p class="authors">Fang-Fei Kuo, Meng-Fen Chiang, Man-Kwan Shan, Suh-Yin Lee.</p> 
 	                            	<div>International conference on Multimedia (MM), 2005 </em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>	                        
