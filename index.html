@@ -12,20 +12,20 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-    .publication h3 {
+    	.publication h3 {
         color: #2c3e50;
         margin: 0 0 10px 0;
         font-size: 1.2em;
         line-height: 1.4;
-    }
+    	}
     
-    .publication p {
+    	.publication p {
         margin: 8px 0;
         padding: 0;
-    }
+    	}
     
-    /* Authors - clean, one line */
-    .authors {
+    	/* Authors - clean, one line */
+    	.authors {
         display: block;
         white-space: nowrap;
         overflow-x: auto;
@@ -36,25 +36,25 @@
         padding: 0 0 5px 0;
         border: none;
         text-decoration: none;
-    }
+    	}
     
-    .authors::-webkit-scrollbar {
-        height: 4px;
-    }
+    	.authors::-webkit-scrollbar {
+        	height: 4px;
+    	}
     
-    .authors::-webkit-scrollbar-thumb {
-        background: #ccc;
-        border-radius: 2px;
-    }
+    	.authors::-webkit-scrollbar-thumb {
+        	background: #ccc;
+        	border-radius: 2px;
+    	}
         
-    /* Headers */
-    h2 {
-        color: #2c5aa0;
-        border-bottom: 2px solid #e0e0e0;
-        padding-bottom: 10px;
-        margin-bottom: 25px;
-        font-size: 1.8em;
-    }
+        /* Headers */
+        h2 {
+        	color: #2c5aa0;
+        	border-bottom: 2px solid #e0e0e0;
+        	padding-bottom: 10px;
+        	margin-bottom: 25px;
+        	font-size: 1.8em;
+        }
     
         /* Lab Header Section - Two Columns */
         .lab-header {
@@ -87,6 +87,22 @@
             margin-top: 10px;
             line-height: 1.4;
         }
+        
+    	.lab-logo {
+        width: 250px;
+        height: 250px;
+        object-fit: contain;
+        display: block;
+        margin: 0 auto 20px auto;
+        filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));  /* Subtle shadow */
+        -webkit-filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));
+    	}
+    
+    	/* Remove any weird background blending */
+    	.lab-logo-section {
+        text-align: center;
+        background: transparent;
+    	}
         
         /* Leader Info Column */
         .leader-info {
@@ -232,9 +248,9 @@
 				</ul>
 				<div class="content">
 					<h3>Meng-Fen Chiang</h3>
-					<div><b>Assistant Professor</b></div>
-					<div><b>Department of Electronics and Electrical Engineering (ECE)</b></div>
-					<div><b>National Yang Ming Chiao Tung University (NYCU)</b></div>
+					<div class="title">Assistant Professor</div>
+					<div class="affiliation"><b>Department of Electronics and Electrical Engineering (ECE)</b></div>
+					<div class="affiliation"><b>National Yang Ming Chiao Tung University (NYCU)</b></div>
 					<div class="contact">Office: 528-5</div>
 					<div class="contact">E-mail: meng.chiang [at] nycu.edu.tw</div>
 				</div>
