@@ -11,14 +11,60 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-        .publication .authors {
+    <style>
+        .authors {
             white-space: nowrap;
             overflow-x: auto;
             font-size: 0.95em;
             padding-bottom: 5px;
         }
-    	</style>
+        
+        .authors::-webkit-scrollbar {
+            height: 4px;
+        }
+        
+        .authors::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 2px;
+        }
+        
+        .lab-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .lab-logo {
+            width: 150px;
+            height: auto;
+            flex-shrink: 0;
+        }
+        
+        .lab-details h3 {
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+        }
+        
+        .lab-details p {
+            margin: 5px 0;
+            color: #555;
+        }
+        
+        @media (max-width: 768px) {
+            .lab-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .lab-logo {
+                width: 120px;
+            }
+        }
+    </style>
 		
 	</head>
 	<body class="is-preload">
@@ -38,6 +84,16 @@
 			</header>
  -->			<!-- One -->
 			<section id="about" class="wrapper style2 special">
+        		<!-- Knowledge Computing Lab Info -->
+        		<div class="lab-info">
+            		<img src="kclab.png" alt="Knowledge Computing Lab Logo" class="lab-logo">
+            		<div class="lab-details">
+                		<h3>Knowledge Computing Lab (知識計算實驗室)</h3>
+                		<p><strong>Affiliation:</strong> National Yang Ming Chiao Tung University</p>
+                		<p><strong>Research Focus:</strong> Knowledge Computing, Natural Language Processing, 
+                   		Knowledge Graphs, and AI Systems</p>
+            		</div>
+        		</div>			
 				<ul class="icons major">
 					<a href="https://dblp.org/pid/78/5975.html"><img class="rounded profile-icon" src="images/dblp.png" width="50px"></a>
 					<a href="https://scholar.google.com.sg/citations?user=ToKEQ5AAAAAJ&hl=en"><img class="rounded profile-icon" src="images/googlescholar.png" width="50px"></a>
@@ -68,6 +124,7 @@
                 		</p>
 					</section>
 				</div>
+				
 			</section>
 
 			<section id="research" class="wrapper">
@@ -148,7 +205,7 @@
 	                        </div></br>	
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>HyperRAG: Reasoning N-ary Facts over Hypergraphs for Retrieval Augmented Generation </strong><br></span><span></span>
-	                                <div>Wen-Sheng Lien, Yu-Kai Chan, Hao-Lung Hsiao, Bo-Kai Ruan, Meng-Fen Chiang, Chien-An Chen, Yi-Ren Yeh, Hong-Han Shuai. </div> 
+	                                <p class="authors">Wen-Sheng Lien, Yu-Kai Chan, Hao-Lung Hsiao, Bo-Kai Ruan, Meng-Fen Chiang, Chien-An Chen, Yi-Ren Yeh, Hong-Han Shuai. </p> 
 	                            	<div>The Web Conference (WWW), 2026</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>		                        	                        
