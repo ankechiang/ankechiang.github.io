@@ -12,44 +12,93 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-        .authors {
-            display: block;
-            white-space: nowrap;
-            overflow-x: auto;
-            font-size: 0.85em;
-            color: #555;
-            font-style: italic;
-            margin: 10px 0 8px 0;
-            padding: 0;
-            border: none;
-            text-decoration: none;
-        }
+    .publication h3 {
+        color: #2c3e50;
+        margin: 0 0 10px 0;
+        font-size: 1.2em;
+        line-height: 1.4;
+    }
+    
+    .publication p {
+        margin: 8px 0;
+        padding: 0;
+    }
+    
+    /* Authors - clean, one line */
+    .authors {
+        display: block;
+        white-space: nowrap;
+        overflow-x: auto;
+        font-size: 0.85em;
+        color: #555;
+        font-style: italic;
+        margin: 10px 0 8px 0;
+        padding: 0 0 5px 0;
+        border: none;
+        text-decoration: none;
+    }
+    
+    .authors::-webkit-scrollbar {
+        height: 4px;
+    }
+    
+    .authors::-webkit-scrollbar-thumb {
+        background: #ccc;
+        border-radius: 2px;
+    }
         
-        .lab-info {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin: 20px 0;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
-        }
-        
-        .lab-logo {
-            width: 150px;
-            height: auto;
-            flex-shrink: 0;
-        }
-        
-        .lab-details h3 {
-            margin: 0 0 10px 0;
-            color: #2c3e50;
-        }
-        
-        .lab-details p {
-            margin: 5px 0;
-            color: #555;
-        }
+    /* Headers */
+    h2 {
+        color: #2c5aa0;
+        border-bottom: 2px solid #e0e0e0;
+        padding-bottom: 10px;
+        margin-bottom: 25px;
+        font-size: 1.8em;
+    }
+    
+    /* Lab Info Section */
+    .lab-info {
+        display: flex;
+        align-items: flex-start;
+        gap: 25px;
+        margin: 25px 0;
+        padding: 25px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border-left: 4px solid #2c5aa0;
+    }
+    
+    .lab-logo {
+        width: 140px;
+        height: 140px;
+        flex-shrink: 0;
+        object-fit: contain;
+        display: block;
+    }
+    
+    .lab-details {
+        flex: 1;
+        min-width: 0;
+    }
+    
+    .lab-details h3 {
+        margin: 0 0 12px 0;
+        color: #2c5aa0;
+        font-size: 1.3em;
+        line-height: 1.3;
+    }
+    
+    .lab-details p {
+        margin: 8px 0;
+        color: #555;
+        line-height: 1.6;
+        font-size: 0.95em;
+    }
+    
+    .lab-details strong {
+        color: #2c3e50;
+        font-weight: 600;
+    }
         
         @media (max-width: 768px) {
             .lab-info {
@@ -57,9 +106,6 @@
                 text-align: center;
             }
             
-            .lab-logo {
-                width: 120px;
-            }
         }
     </style>
 		
@@ -83,7 +129,7 @@
 			<section id="about" class="wrapper style2 special">
         		<!-- Knowledge Computing Lab Info -->
         		<div class="lab-info">
-            		<img src="images/kclab.png" alt="Knowledge Computing Lab Logo" class="lab-logo">
+            		<img src="kclab.png" alt="Knowledge Computing Lab Logo" class="lab-logo">
             		<div class="lab-details">
                 		<h3>Knowledge Computing Lab (知識計算實驗室)</h3>
                 		<p><strong>Affiliation:</strong> National Yang Ming Chiao Tung University</p>
