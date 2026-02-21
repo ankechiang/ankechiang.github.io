@@ -134,76 +134,81 @@
             font-weight: 600;
         }
         
-        /* Leader Info Column - RIGHT */
-        .leader-info {
-            padding: 20px 0;
-        }
-        
-        .leader-info h1 {
-            font-size: 2.5em;
-            color: #2c3e50;
-            margin-bottom: 25px;
-            font-weight: 600;
-        }
-        
-        .leader-info .title {
-            font-size: 1.5em;
-            color: #2c5aa0;
-            font-weight: 600;
-            margin-bottom: 25px;
-        }
-        
-        .leader-info .affiliation {
-            font-size: 1.1em;
-            color: #666;
-            margin-bottom: 10px;
-            line-height: 1.8;
-        }
-        
-        .leader-info .contact {
-            margin-top: 30px;
-            padding-top: 25px;
-            border-top: 2px solid #e0e0e0;
-        }
-        
-        .leader-info .contact p {
-            color: #666;
-            margin: 12px 0;
-            font-size: 1.05em;
-        }
-        
-        .leader-info .contact a {
-            color: #2c5aa0;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .leader-info .contact a:hover {
-            color: #1a3d6b;
-            text-decoration: underline;
-        }
-        
-        /* Social Icons */
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .social-icons a {
-            display: inline-block;
-            transition: transform 0.3s;
-        }
-        
-        .social-icons a:hover {
-            transform: translateY(-3px);
-        }
-        
-        .social-icons img {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-        }
+    /* Leader Info Column - RIGHT - TIGHTER */
+    .leader-info {
+        padding: 0;
+    }
+    
+    .leader-info h1 {
+        font-size: 2.5em;
+        color: #2c3e50;
+        margin-bottom: 15px;  /* Reduced from 25px */
+        font-weight: 600;
+        line-height: 1.2;
+    }
+    
+    .leader-info .title {
+        font-size: 1.5em;
+        color: #2c5aa0;
+        font-weight: 600;
+        margin-bottom: 20px;  /* Reduced from 25px */
+    }
+    
+    /* Social Icons - RIGHT AFTER TITLE */
+    .social-icons {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 25px;  /* Space before affiliation */
+    }
+    
+    .social-icons a {
+        display: inline-block;
+        transition: transform 0.3s;
+    }
+    
+    .social-icons a:hover {
+        transform: translateY(-3px);
+    }
+    
+    .social-icons img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+    }
+    
+    .leader-info .affiliation {
+        font-size: 1.05em;
+        color: #666;
+        margin-bottom: 8px;  /* Reduced from 10px */
+        line-height: 1.6;    /* Reduced from 1.8 */
+    }
+    
+    .leader-info .affiliation p {
+        margin: 5px 0;  /* Tighter line spacing */
+    }
+    
+    .leader-info .contact {
+        margin-top: 25px;  /* Reduced from 30px */
+        padding-top: 20px; /* Reduced from 25px */
+        border-top: 2px solid #e0e0e0;
+    }
+    
+    .leader-info .contact p {
+        color: #666;
+        margin: 10px 0;  /* Reduced from 12px */
+        font-size: 1em;   /* Reduced from 1.05em */
+    }
+    
+    .leader-info .contact a {
+        color: #2c5aa0;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    .leader-info .contact a:hover {
+        color: #1a3d6b;
+        text-decoration: underline;
+    }
     </style>
 		
 	</head>
@@ -214,7 +219,7 @@
     		<nav>
         		<a href="#research">Research</a>
         		<a href="#teaching">Teaching</a>
-        		<a href="#publications">Publications</a>
+        		<a href="#pub">Publications</a>
     		</nav>
 
 
@@ -233,29 +238,28 @@
                 
                 <p class="title">Assistant Professor</p>
                 
-                <div class="affiliation">
-                    <p>Department of<br>
-                    Electronics and Electrical Engineering (ECE)</p>
-                    <p>National Yang Ming Chiao Tung University (NYCU)</p>
-                </div>
-                
-                <div class="contact">
-                    <p><strong>Office:</strong> 528-5</p>
-                    <p><strong>E-mail:</strong> <a href="mailto:meng.chiang@nycu.edu.tw">meng.chiang [at] nycu.edu.tw</a></p>
-                    
-                    <!-- Social Icons -->
-                    <div class="social-icons">
-                        <a href="#" target="_blank" title="Google Scholar">
-                            <img src="https://cdn.simpleicons.org/googlescholar/4285F4" alt="Google Scholar">
-                        </a>
-                        <a href="#" target="_blank" title="LinkedIn">
-                            <img src="https://cdn.simpleicons.org/linkedin/0A66C2" alt="LinkedIn">
-                        </a>
-                        <a href="https://github.com/ankechiang" target="_blank" title="GitHub">
-                            <img src="https://cdn.simpleicons.org/github/181717" alt="GitHub">
-                        </a>
-                    </div>
-                </div>
+    			<!-- Social Icons - MOVED HERE -->
+    			<div class="social-icons">
+        			<a href="#" target="_blank" title="Google Scholar">
+            			<img src="https://cdn.simpleicons.org/googlescholar/4285F4" alt="Google Scholar">
+        			</a>
+        			<a href="#" target="_blank" title="LinkedIn">
+            			<img src="https://cdn.simpleicons.org/linkedin/0A66C2" alt="LinkedIn">
+        			</a>
+        			<a href="https://github.com/ankechiang" target="_blank" title="GitHub">
+            			<img src="https://cdn.simpleicons.org/github/181717" alt="GitHub">
+        			</a>
+    			</div>
+    
+    			<div class="affiliation">
+        			<p>Department of Electronics and Electrical Engineering (ECE)</p>
+        			<p>National Yang Ming Chiao Tung University (NYCU)</p>
+    			</div>
+    
+    			<div class="contact">
+        			<p><strong>Office:</strong> 528-5</p>
+        			<p><strong>E-mail:</strong> <a href="mailto:meng.chiang@nycu.edu.tw">meng.chiang [at] nycu.edu.tw</a></p>
+    			</div>
             </div>
         </section>
 
