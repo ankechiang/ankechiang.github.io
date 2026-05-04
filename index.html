@@ -12,400 +12,467 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-    	.publication h3 {
-        color: #2c3e50;
-        margin: 0 0 10px 0;
-        font-size: 1.2em;
-        line-height: 1.4;
-    	}
-    
-    	.publication p {
-        margin: 8px 0;
-        padding: 0;
-    	}
-    
-    	/* Authors - clean, one line */
-    	.authors {
-        display: block;
-        white-space: nowrap;
-        overflow-x: auto;
-        font-size: 0.85em;
-        color: #555;
-        font-style: italic;
-        margin: 10px 0 8px 0;
-        padding: 0 0 5px 0;
-        border: none;
-        text-decoration: none;
-    	}
-    
-    	.authors::-webkit-scrollbar {
-        	height: 4px;
-    	}
-    
-    	.authors::-webkit-scrollbar-thumb {
-        	background: #ccc;
-        	border-radius: 2px;
-    	}
-        
-        /* Headers */
-        h2 {
-        	color: #2c5aa0;
-        	border-bottom: 2px solid #e0e0e0;
-        	padding-bottom: 10px;
-        	margin-bottom: 25px;
-        	font-size: 1.8em;
-        }
-    
-        /* Reset and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        /* ── Reset & Base ─────────────────────────── */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            color: #2d2d2d;
             background: #fff;
         }
-        
-        /* Navigation Bar */
+
+        /* ── Navigation ─────────────────────────────── */
         nav {
-            background: #2c2c2c;
-            padding: 14px 0;
-            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #1e2a3a;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.2);
         }
-        
+
         nav a {
-            color: white;
+            color: #c8d8ea;
             text-decoration: none;
-            margin: 0 30px;
-            font-size: 1.1em;
-            font-weight: 500;
-            padding-bottom: 5px;
+            font-size: 0.88em;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 15px 28px;
             border-bottom: 3px solid transparent;
-            transition: border-color 0.3s;
+            transition: color 0.2s, border-color 0.2s, background 0.2s;
+            white-space: nowrap;
         }
-        
+
         nav a:hover {
-            border-bottom-color: #fff;
+            color: #fff;
+            border-bottom-color: #5b9bd5;
+            background: rgba(255,255,255,0.06);
         }
-        
-        /* Container */
+
+        /* ── Container ───────────────────────────────── */
         .container {
-            max-width: 1200px;
+            max-width: 960px;
             margin: 0 auto;
-            padding: 60px 20px 40px 20px;  /* Top padding for space from nav */
+            padding: 40px 28px 60px;
         }
-        
-        /* Lab Header Section - Side by Side */
+
+        /* ── Section h2 headings ─────────────────────── */
+        h2 {
+            color: #1e2a3a;
+            font-size: 1.45em;
+            font-weight: 700;
+            border-bottom: 3px solid #5b9bd5;
+            padding-bottom: 8px;
+            margin-bottom: 22px;
+        }
+
+        /* ═══════════════════════════════════════════════
+           LAB HEADER
+        ═══════════════════════════════════════════════ */
         .lab-header {
             display: grid;
-            grid-template-columns: 350px 1fr;
-            gap: 120px;
-            margin-bottom: 60px;
+            grid-template-columns: 260px 1fr;
+            gap: 36px;
+            margin-bottom: 44px;
             align-items: start;
         }
-        
-        
-        /* Lab Logo Column - LEFT */
+
         .lab-logo-section {
             text-align: center;
-            padding: 22px;
-            background: #f8f9fa;
-            border-radius: 10px;
-            border: 2px solid #e0e0e0;
-        }
-        
-        .lab-logo {
-            width: 310px;
-            height: 220px;
-            object-fit: contain;
-            display: block;
-            margin: 0 auto 15px auto;
-        }
-        
-        .lab-logo-section h2 {
-            font-size: 1em;
-            color: #2c3e50;
-            margin-top: 10px;
-            line-height: 1.5;
-            font-weight: 600;
-        }
-        
-    /* Leader Info Column - RIGHT - EXTRA TIGHT */
-    .leader-info {
-        padding: 0;
-    }
-    
-.container {
-    padding: 30px 20px 40px 20px;  /* Even less top space */
-}
-
-.lab-header {
-    gap: 45px;  /* Even closer */
-    margin-bottom: 45px;
-}
-
-    .leader-info h1 {
-        font-size: 2em;  /* Reduced from 2.5em */
-        color: #2c3e50;
-        margin-bottom: 8px;  /* Reduced from 15px */
-        font-weight: 600;
-        line-height: 1.2;
-    }
-    
-    .leader-info .title {
-        font-size: 1.4em;  /* Reduced from 1.5em */
-        color: #2c5aa0;
-        font-weight: 600;
-        margin-bottom: 10px;  /* Reduced from 20px */
-    }
-    
-    /* Social Icons - After Title */
-    .social-icons {
-        display: flex;
-        gap: 15px;
-        margin-bottom: 8px;
-        flex-wrap: wrap;
-    }
-
-    .social-icons ul.icons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-    
-    .social-icons a {
-        display: inline-block;
-        transition: transform 0.3s;
-    }
-    
-    .social-icons a:hover {
-        transform: translateY(-3px);
-    }
-    
-    .social-icons img {
-        width: 40px;  /* Reduced from 40px */
-        height: 40px;
-        object-fit: contain;
-    }
-    
-    .leader-info .affiliation {
-        font-size: 1em;  /* Slightly reduced */
-        color: #666;
-        margin-bottom: 3px;  /* Reduced from 8px */
-        line-height: 1.4;  /* Tighter from 1.6 */
-    }
-    
-    .leader-info .affiliation p {
-        margin: 5px 0;  /* Reduced from 5px */
-    }
-    
-    .leader-info .contact {
-        margin-top: 18px;  /* Reduced from 25px */
-        padding-top: 18px;  /* Reduced from 20px */
-        border-top: 2px solid #e0e0e0;
-    }
-    
-    .leader-info .contact p {
-        color: #666;
-        margin: 5px 0;  /* Reduced from 10px */
-        font-size: 1em;  /* Slightly reduced */
-    }
-    
-    .leader-info .contact a {
-        color: #2c5aa0;
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-    
-    .leader-info .contact a:hover {
-        color: #1a3d6b;
-        text-decoration: underline;
-    }
-
-    /* =============================================
-       MOBILE RESPONSIVE STYLES
-       ============================================= */
-
-    /* Tablet: 768px and below */
-    @media (max-width: 768px) {
-
-        /* Nav: wrap links and reduce spacing */
-        nav {
-            padding: 10px 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 4px;
-        }
-
-        nav a {
-            margin: 4px 10px;
-            font-size: 0.95em;
-        }
-
-        /* Container: tighter padding */
-        .container {
-            padding: 20px 14px 30px 14px;
-        }
-
-        /* Lab header: stack vertically instead of side-by-side */
-        .lab-header {
-            grid-template-columns: 1fr !important;
-            gap: 24px !important;
-            margin-bottom: 30px !important;
-        }
-
-        /* Lab logo: full width, smaller image */
-        .lab-logo-section {
-            padding: 16px;
+            padding: 20px 14px;
+            background: #f4f7fb;
+            border-radius: 12px;
+            border: 1px solid #dde6f0;
         }
 
         .lab-logo {
             width: 100%;
-            max-width: 260px;
+            max-width: 220px;
             height: auto;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 10px;
         }
 
-        /* Leader info: normal flow */
-        .leader-info {
+        .lab-logo-section h2 {
+            font-size: 0.88em;
+            color: #1e2a3a;
+            border: none;
             padding: 0;
+            margin: 0;
+            font-weight: 700;
+            line-height: 1.5;
         }
 
-        .leader-info h1,
+        .lab-logo-section h3 {
+            font-size: 0.8em;
+            color: #5b7a99;
+            font-weight: 500;
+            margin-top: 3px;
+        }
+
+        /* ── Leader Info ─────────────────────────────── */
+        .leader-info { padding: 2px 0 0; }
+
         .leader-info h3 {
-            font-size: 1.6em !important;
+            font-size: 1.85em;
+            color: #1e2a3a;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 5px;
         }
 
         .leader-info .title {
-            font-size: 1.1em !important;
+            font-size: 1.05em;
+            color: #2c5aa0;
+            font-weight: 600;
+            margin-bottom: 14px;
         }
 
-        /* Social icons: slightly smaller on mobile */
-        .social-icons img,
-        .social-icons .profile-icon {
-            width: 36px !important;
-            height: 36px !important;
+        /* Social icons */
+        .social-icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 14px;
         }
 
-        /* Bio / research / teaching sections */
-        .wrapper .inner {
-            padding: 20px 0 !important;
+        .social-icons ul.icons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        /* image2 + content2 side-by-side → stack */
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            background: #f0f4f9;
+            border: 1px solid #dde6f0;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(44,90,160,0.18);
+            background: #e2edf8;
+        }
+
+        .social-icons img {
+            width: 20px !important;
+            height: 20px !important;
+            object-fit: contain;
+        }
+
+        .leader-info .affiliation {
+            font-size: 0.93em;
+            color: #555;
+            line-height: 1.65;
+        }
+
+        .leader-info .affiliation p { margin: 2px 0; }
+
+        .leader-info .contact {
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid #e0e8f0;
+        }
+
+        .leader-info .contact p {
+            color: #555;
+            margin: 4px 0;
+            font-size: 0.91em;
+            line-height: 1.6;
+        }
+
+        .leader-info .contact a { color: #2c5aa0; text-decoration: none; }
+        .leader-info .contact a:hover { text-decoration: underline; }
+
+        /* ═══════════════════════════════════════════════
+           BIO — card with subtle gradient
+        ═══════════════════════════════════════════════ */
+        #bio .inner {
+            background: linear-gradient(130deg, #f0f6fd 0%, #e8f1fb 100%);
+            border-radius: 14px;
+            border: 1px solid #d8e6f2;
+            padding: 28px 36px;
+            margin-bottom: 4px;
+        }
+
+        #bio .spotlight { display: block; }  /* override grid for bio */
+
+        #bio p {
+            font-size: 0.96em;
+            line-height: 1.9;
+            color: #333;
+            max-width: 100%;
+        }
+
+        #bio p a { color: #2c5aa0; text-decoration: none; }
+        #bio p a:hover { text-decoration: underline; }
+
+        /* ═══════════════════════════════════════════════
+           RESEARCH & TEACHING — image + content side-by-side
+        ═══════════════════════════════════════════════ */
+        #research .inner,
+        #teaching .inner {
+            padding: 4px 0 28px;
+        }
+
         .spotlight {
-            display: block !important;
+            display: grid;
+            grid-template-columns: 210px 1fr;
+            gap: 32px;
+            align-items: start;
         }
 
         .image2 {
-            display: block;
-            width: 100% !important;
-            max-width: 100%;
-            margin: 0 0 16px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
         }
 
         .image2 img {
             width: 100%;
-            height: auto;
-            border-radius: 8px;
+            height: 195px;
+            object-fit: cover;
+            display: block;
         }
 
-        .content2 {
-            width: 100% !important;
-            padding: 0 !important;
+        .content2 { padding: 2px 0; }
+
+        .content2 h3 {
+            font-size: 1.2em;
+            color: #1e2a3a;
+            font-weight: 700;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e0e8f2;
         }
 
-        /* Publication section */
+        /* Research category labels */
+        .content2 b {
+            display: block;
+            color: #2c5aa0;
+            font-size: 0.85em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 14px 0 5px;
+        }
+
+        .content2 ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .content2 ul li {
+            font-size: 0.91em;
+            color: #444;
+            padding: 3px 0 3px 16px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .content2 ul li::before {
+            content: "›";
+            position: absolute;
+            left: 2px;
+            color: #5b9bd5;
+            font-weight: 700;
+        }
+
+        /* Teaching bare <li> items (not inside <ul>) */
+        #teaching .content2 > li {
+            display: block;
+            font-size: 0.91em;
+            color: #444;
+            padding: 4px 0 4px 18px;
+            position: relative;
+            line-height: 1.5;
+            list-style: none;
+        }
+
+        #teaching .content2 > li::before {
+            content: "›";
+            position: absolute;
+            left: 2px;
+            color: #5b9bd5;
+            font-weight: 700;
+        }
+
+        /* ═══════════════════════════════════════════════
+           PUBLICATIONS — left-aligned, clean list
+        ═══════════════════════════════════════════════ */
+        #pub .inner { padding: 4px 0 28px; }
+
+        .spotlight2 .content { padding: 0; }
+
+        .spotlight2 .content h3 {
+            font-size: 1.2em;
+            color: #1e2a3a;
+            font-weight: 700;
+            margin-bottom: 18px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e0e8f2;
+        }
+
         .public-item {
-            padding: 12px 0;
+            padding: 14px 0;
+            border-bottom: 1px solid #eef2f7;
+            text-align: left;
         }
 
-        /* Authors: allow wrapping on mobile */
+        .public-item:last-child { border-bottom: none; }
+
+        .item-icon-div { padding: 0; }
+
+        /* Paper title */
+        .ptitle strong {
+            display: block;
+            font-size: 0.95em;
+            font-weight: 700;
+            color: #1a2d48;
+            line-height: 1.55;
+            margin-bottom: 5px;
+        }
+
+        /* PDF / link badge inline with title */
+        .ptitle a {
+            font-size: 0.78em;
+            font-weight: 600;
+            color: #2c5aa0;
+            text-decoration: none;
+            background: #eef3fb;
+            padding: 1px 7px;
+            border-radius: 4px;
+            margin-left: 4px;
+            vertical-align: middle;
+            transition: background 0.2s;
+        }
+
+        .ptitle a:hover { background: #d4e5f8; }
+
+        /* Authors */
         .authors {
-            white-space: normal !important;
-            overflow-x: visible !important;
+            display: block;
+            white-space: normal;
+            overflow: visible;
+            font-size: 0.86em;
+            color: #666;
+            font-style: italic;
+            margin: 3px 0 6px;
+            line-height: 1.5;
         }
 
-        /* h2 headings */
-        h2 {
-            font-size: 1.4em !important;
-        }
 
-        /* Footer icons */
+
+        .item-icon-div > div em,
+        .item-icon-div > div span { font-style: normal; }
+
+        /* ═══════════════════════════════════════════════
+           FOOTER
+        ═══════════════════════════════════════════════ */
         #footer {
+            background: #f4f7fb;
+            border-top: 1px solid #dde6f0;
+            padding: 30px 24px 24px;
             text-align: center;
-            padding: 20px 14px;
+        }
+
+        #footer h3 {
+            color: #1e2a3a;
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-bottom: 14px;
+            letter-spacing: 0.04em;
         }
 
         #footer .icons {
             display: flex;
-            flex-wrap: wrap;
             justify-content: center;
-            gap: 10px;
-            padding: 0;
-            list-style: none;
-        }
-    }
-
-    /* Small phones: 480px and below */
-    @media (max-width: 480px) {
-
-        nav a {
-            font-size: 0.85em;
-            margin: 3px 8px;
-        }
-
-        .container {
-            padding: 14px 10px 24px 10px;
-        }
-
-        .leader-info h1,
-        .leader-info h3 {
-            font-size: 1.35em !important;
-        }
-
-        .leader-info .title {
-            font-size: 1em !important;
-        }
-
-        .lab-logo {
-            max-width: 200px;
-        }
-
-        h2 {
-            font-size: 1.25em !important;
-        }
-
-        /* Make publication titles readable */
-        .ptitle strong {
-            font-size: 0.95em;
-            line-height: 1.5;
-        }
-
-        .leader-info .contact p {
-            font-size: 0.9em;
-            line-height: 1.6;
-        }
-
-        /* Social icon row: wrap cleanly */
-        .social-icons {
             flex-wrap: wrap;
             gap: 10px;
+            list-style: none;
+            padding: 0;
+            margin: 0 0 14px;
         }
 
-        .social-icons img,
-        .social-icons .profile-icon {
-            width: 32px !important;
-            height: 32px !important;
+        #footer .icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: #e5eef8;
+            border: 1px solid #ccdaf0;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-    }
+
+        #footer .icons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(44,90,160,0.2);
+        }
+
+        #footer .icons img { width: 20px; height: 20px; object-fit: contain; }
+
+        .copyright { font-size: 0.8em; color: #999; }
+        .copyright a { color: #5b9bd5; text-decoration: none; }
+
+        /* ═══════════════════════════════════════════════
+           MOBILE — tablet ≤ 768px
+        ═══════════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            nav a { padding: 11px 18px; font-size: 0.8em; }
+
+            .container { padding: 22px 16px 44px; }
+
+            .lab-header {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                margin-bottom: 28px;
+            }
+
+            .lab-logo { max-width: 190px; }
+            .leader-info h3 { font-size: 1.5em; }
+
+            #bio .inner { padding: 20px 22px; }
+
+            .spotlight {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .image2 img { height: 175px; }
+
+            h2 { font-size: 1.25em; }
+        }
+
+        /* Mobile ≤ 480px */
+        @media (max-width: 480px) {
+            nav a { padding: 9px 12px; font-size: 0.75em; letter-spacing: 0.04em; }
+            .container { padding: 16px 12px 36px; }
+            .leader-info h3 { font-size: 1.3em; }
+            .leader-info .title { font-size: 0.97em; }
+            .social-icons a { width: 34px; height: 34px; }
+            .social-icons img { width: 17px !important; height: 17px !important; }
+            h2 { font-size: 1.12em; }
+            #bio .inner { padding: 16px 18px; }
+            .ptitle strong { font-size: 0.91em; }
+            .content2 h3 { font-size: 1.1em; }
+        }
     </style>
 		
 	</head>
@@ -491,9 +558,7 @@
 		
 			<section id="bio" class="wrapper">
 				<div class="inner">
-					<section class="spotlight">
-						<!--<div class="image"><img src="images/mfchiang-pic.jpg" alt="" /></div>-->
-						<p style="font-size: 1.0em; line-height: 1.8; color: #555;">
+					<p style="">
 							<strong>Meng-Fen Chiang</strong> is an Assistant Professor in the <a href="https://ece.nycu.edu.tw/home.aspx">Department of Electronics and Electrical Engineering (ECE)</a> at <a href="https://www.nycu.edu.tw/nycu/ch/index">National Yang Ming Chiao Tung University (NYCU)</a>. 
                 			Her research focuses on <strong>Reliable Multimodal Intelligence</strong>, spanning Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and Explainable Generative AI.
                 			Prior to NYCU, she was a Lecturer at <a href="https://www.auckland.ac.nz/">The University of Auckland</a> and a Researcher/Adjunct Professor at the <strong>Living Analytics Research Centre</strong> in Singapore. She received her Ph.D. from National Chiao-Tung University.
