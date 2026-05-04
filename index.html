@@ -219,8 +219,9 @@
         .item-icon-div { padding:0; }
         .ptitle strong {
             display:block; font-size:0.94em; font-weight:700;
-            color:#1a2d48; line-height:1.55; margin-bottom:5px;
+            color:#1a2d48; line-height:1.55; margin-bottom:0;
         }
+        .ptitle br { display:none; }  /* remove the <br> gap between title and authors */
         .ptitle a {
             font-size:0.77em; font-weight:600; color:#2c5aa0;
             text-decoration:none; background:#eef3fb;
@@ -231,7 +232,7 @@
         .authors {
             display:block; white-space:normal; overflow:visible;
             font-size:0.85em; color:#666; font-style:italic;
-            margin:3px 0 6px; line-height:1.5;
+            margin:1px 0 5px; line-height:1.5;
         }
         .item-icon-div > div {
             display:inline-block; font-size:0.8em; color:#1e4a80;
@@ -337,201 +338,160 @@
         }
 
         /* ══════════════════════════════════════════════
-           MILA-STYLE SECTIONS  (Research + Teaching)
+           BIO + MILA-STYLE SECTIONS
         ══════════════════════════════════════════════ */
 
-        /* Section wrappers */
-        .mila-section {
-            padding: 0;
-            background: #f5f8fc;
-            border-top: 1px solid #e4eaf3;
+        /* Bio card */
+        #bio .inner {
+            background: linear-gradient(130deg, #f0f6fd 0%, #e8f1fb 100%);
+            border-radius: 14px;
+            border: 1px solid #d8e6f2;
+            padding: 32px 40px;
+            max-width: 1040px;
+            margin: 0 auto;
+            box-sizing: border-box;
         }
+        #bio p {
+            font-size: 0.96em;
+            line-height: 1.9;
+            color: #333;
+            margin: 0;
+        }
+        #bio p a { color: #2c5aa0; text-decoration: none; }
+        #bio p a:hover { text-decoration: underline; }
+        #bio .spotlight { display: block; }
+
+        /* Section wrappers */
+        .mila-section { padding: 0; background: #f5f8fc; border-top: 1px solid #e4eaf3; }
         .mila-section--alt { background: #ffffff; }
 
         /* ── Shared inner grid ──────────────────────── */
         .mila-inner {
             max-width: 1040px;
             margin: 0 auto;
-            padding: 80px 40px;
+            padding: 72px 40px;
             display: grid;
-            grid-template-columns: 1fr 380px;  /* text big, image fixed */
-            gap: 72px;
+            grid-template-columns: 1fr 340px;
+            gap: 64px;
             align-items: center;
         }
-
-        /* Teaching: image LEFT, text RIGHT */
-        .mila-inner--reverse {
-            grid-template-columns: 380px 1fr;
-        }
+        .mila-inner--reverse { grid-template-columns: 340px 1fr; }
         .mila-inner--reverse .mila-text   { order: 2; }
         .mila-inner--reverse .mila-visual { order: 1; }
 
-        /* ── Text column ────────────────────────────── */
+        /* ── Text column ── */
         .mila-label {
-            font-size: 0.7em;
-            font-weight: 800;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            color: #2c5aa0;
-            margin-bottom: 10px;
+            font-size: 0.68em; font-weight: 800;
+            letter-spacing: 0.16em; text-transform: uppercase;
+            color: #2c5aa0; margin-bottom: 8px;
         }
-
         .mila-heading {
-            font-size: 2em;
-            font-weight: 800;
-            color: #1a2540;
-            line-height: 1.18;
-            margin-bottom: 16px;
-            border: none !important;
-            padding: 0 !important;
+            font-size: 2em; font-weight: 800;
+            color: #1a2540; line-height: 1.15;
+            margin-bottom: 14px;
+            border: none !important; padding: 0 !important;
+            /* force single line on desktop */
+            white-space: nowrap;
         }
-
         .mila-desc {
-            font-size: 0.93em;
-            color: #5a6476;
-            line-height: 1.85;
-            margin-bottom: 30px;
-            max-width: 520px;
+            font-size: 0.91em; color: #5a6476;
+            line-height: 1.85; margin-bottom: 28px; max-width: 540px;
         }
-
-        /* Topic category label */
         .mila-topic-label {
-            display: block;
-            font-size: 0.72em;
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: #2c5aa0;
-            margin-bottom: 4px;
-            margin-top: 2px;
+            display: block; font-size: 0.7em; font-weight: 800;
+            letter-spacing: 0.1em; text-transform: uppercase;
+            color: #2c5aa0; margin-bottom: 4px;
         }
 
-        /* ── Research: 2-col topic grid ─────────────── */
+        /* Research 2×2 grid */
         .mila-topics {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px 28px;
+            gap: 18px 28px;
         }
-
-        .mila-topic-group ul {
-            list-style: none; padding: 0; margin: 4px 0 0;
-        }
+        .mila-topic-group ul { list-style: none; padding: 0; margin: 4px 0 0; }
         .mila-topic-group ul li {
-            font-size: 0.86em; color: #3d4a5e;
-            padding: 3px 0 3px 15px;
-            position: relative; line-height: 1.5;
+            font-size: 0.85em; color: #3d4a5e;
+            padding: 3px 0 3px 14px; position: relative; line-height: 1.5;
         }
         .mila-topic-group ul li::before {
             content: "›"; position: absolute; left: 2px;
             color: #5b9bd5; font-weight: 700;
         }
 
-        /* ── Teaching: 2-col course grid ───────────── */
-        .mila-course-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px 28px;
-        }
-        .mila-course-col ul {
-            list-style: none; padding: 0; margin: 4px 0 0;
-        }
+        /* Teaching 2-col course grid */
+        .mila-course-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 28px; }
+        .mila-course-col ul { list-style: none; padding: 0; margin: 4px 0 0; }
         .mila-course-col ul li {
-            font-size: 0.86em; color: #3d4a5e;
-            padding: 3px 0 3px 15px;
-            position: relative; line-height: 1.5;
+            font-size: 0.85em; color: #3d4a5e;
+            padding: 3px 0 3px 14px; position: relative; line-height: 1.5;
         }
         .mila-course-col ul li::before {
             content: "›"; position: absolute; left: 2px;
             color: #5b9bd5; font-weight: 700;
         }
 
-        /* ── Visual column ──────────────────────────── */
-        .mila-visual {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Coloured square + circle image — exactly like Mila */
+        /* ── Visual column ── */
+        .mila-visual { display: flex; align-items: center; justify-content: center; }
         .mila-img-frame {
-            position: relative;
-            width: 100%;
-            max-width: 360px;
-            aspect-ratio: 1 / 1;
-            border-radius: 32px;
-            flex-shrink: 0;
+            position: relative; width: 100%; max-width: 320px;
+            aspect-ratio: 1/1; border-radius: 28px; flex-shrink: 0;
         }
-
-        /* Coloured background */
         .mila-img-frame::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            border-radius: 32px;
-            z-index: 0;
+            content: ""; position: absolute; inset: 0; border-radius: 28px; z-index: 0;
         }
         .mila-img-frame--teal::before  { background: #cceee9; }
         .mila-img-frame--amber::before { background: #fde9b8; }
-
-        /* Circle-cropped photo sits inset */
         .mila-img {
-            position: absolute;
-            top: 50%; left: 50%;
+            position: absolute; top: 50%; left: 50%;
             transform: translate(-50%, -50%);
-            width: 84%; height: 84%;
-            object-fit: cover;
-            border-radius: 50%;
-            z-index: 1;
+            width: 84%; height: 84%; object-fit: cover;
+            border-radius: 50%; z-index: 1;
             box-shadow: 0 10px 36px rgba(0,0,0,0.15);
             transition: transform 0.45s cubic-bezier(.22,.68,0,1.2);
         }
         .mila-img-frame:hover .mila-img {
-            transform: translate(-50%, -50%) scale(1.05);
+            transform: translate(-50%, -50%) scale(1.06);
         }
 
-        /* ── Tablet  769–1024px ─────────────────────── */
-        @media (max-width: 1024px) {
-            .mila-inner {
-                grid-template-columns: 1fr 320px;
-                gap: 48px;
-                padding: 64px 28px;
-            }
-            .mila-inner--reverse {
-                grid-template-columns: 320px 1fr;
-            }
-            .mila-heading { font-size: 1.7em; }
-            .mila-img-frame { max-width: 300px; }
+        /* ── Tablet 769–1100px: heading wraps if needed ── */
+        @media (max-width: 1100px) {
+            .mila-inner { gap: 44px; padding: 64px 28px; }
+            .mila-heading { font-size: 1.75em; white-space: normal; }
+            .mila-img-frame { max-width: 280px; }
+            #bio .inner { padding: 28px 28px; }
         }
 
-        /* ── Mobile  ≤ 768px ────────────────────────── */
+        /* ── Mobile ≤ 768px: full stack ── */
         @media (max-width: 768px) {
+            #bio .inner { padding: 22px 18px; border-radius: 10px; }
+
             .mila-inner,
             .mila-inner--reverse {
                 grid-template-columns: 1fr;
-                gap: 28px;
-                padding: 48px 18px;
+                gap: 24px;
+                padding: 44px 18px;
             }
-
-            /* Always: image on top, text below on mobile */
-            .mila-inner .mila-text   { order: 2; }
-            .mila-inner .mila-visual { order: 1; }
+            /* Image always on top, text below */
+            .mila-inner .mila-text,
             .mila-inner--reverse .mila-text   { order: 2; }
+            .mila-inner .mila-visual,
             .mila-inner--reverse .mila-visual { order: 1; }
 
-            .mila-heading { font-size: 1.55em; }
-            .mila-desc    { max-width: 100%; margin-bottom: 20px; }
-
-            .mila-img-frame { max-width: 260px; margin: 0 auto; }
+            .mila-heading { font-size: 1.5em; white-space: normal; }
+            .mila-desc    { max-width: 100%; margin-bottom: 18px; font-size: 0.89em; }
+            .mila-img-frame { max-width: 240px; margin: 0 auto; }
 
             .mila-topics,
-            .mila-course-grid { grid-template-columns: 1fr 1fr; gap: 14px 20px; }
+            .mila-course-grid { grid-template-columns: 1fr 1fr; gap: 14px 18px; }
         }
 
-        /* ── Small phones  ≤ 480px ──────────────────── */
+        /* ── Small phones ≤ 480px ── */
         @media (max-width: 480px) {
-            .mila-inner { padding: 36px 14px; gap: 22px; }
-            .mila-heading { font-size: 1.3em; }
-            .mila-img-frame { max-width: 220px; }
+            #bio .inner { padding: 18px 14px; }
+            .mila-inner { padding: 32px 12px; gap: 18px; }
+            .mila-heading { font-size: 1.28em; }
+            .mila-img-frame { max-width: 200px; }
             .mila-topics,
             .mila-course-grid { grid-template-columns: 1fr; gap: 12px; }
         }
@@ -632,38 +592,45 @@
 			<section id="research" class="wrapper mila-section">
     <div class="mila-inner">
         <div class="mila-text">
-            <h2 class="mila-heading">Knowledge-Grounded Responsible AI</h2>
+            <div class="mila-label">Research Interests</div>
+            <h2 class="mila-heading">Knowledge-Grounded Reliable AI</h2>
             <p class="mila-desc">
-                Building AI systems that reason faithfully over structured and multimodal knowledge. 
-                Trustworthy, Explainable, Privacy-aware, Knowledge-Grounded from the ground up.
+                Building AI systems that reason faithfully over structured and multimodal knowledge —
+                trustworthy, explainable, and privacy-aware from the ground up.
             </p>
             <div class="mila-topics">
+                <div class="mila-topic-group">
+                    <span class="mila-topic-label">RAG &amp; Generation</span>
+                    <ul>
+                        <li>Hypergraph-structured RAG for N-ary facts</li>
+                        <li>Privacy auditing in RAG pipelines</li>
+                        <li>Knowledge-conflict resolution in LLMs</li>
+                    </ul>
+                </div>
                 <div class="mila-topic-group">
                     <span class="mila-topic-label">Multimodal Reasoning</span>
                     <ul>
                         <li>Relation-aware analogical reasoning</li>
+                        <li>Text-to-image multigranular alignment</li>
                         <li>Faithful persona steering</li>
-						<li>N-ary facts reasoning ove Hypergraphs</li>
-						<li>Knowledge-conflict resolution in LLMs</li>
-						<li>Logical reasoning over knolwedge graphs</li>
                     </ul>
                 </div>
                 <div class="mila-topic-group">
-                    <span class="mila-topic-label">Responsible AI</span>
+                    <span class="mila-topic-label">Reliable &amp; Explainable AI</span>
                     <ul>
                         <li>Hallucination detection for domain LLMs</li>
-                        <li>Privacy auditing in RAG systems</li>     
-                        <li>Zero-shot cross-domain transfer</li> 
-                        <li>Editable rationale learning</li>    
-                        <li>Metric-guided explainability</li> 
+                        <li>Metric-guided explainability</li>
+                        <li>Principle-guided medical reasoning</li>
                     </ul>
                 </div>
                 <div class="mila-topic-group">
-                    <span class="mila-topic-label">Multimodal Generative AI</span>
+                    <span class="mila-topic-label">Graph &amp; Logical Reasoning</span>
                     <ul>
-                        <li>Text-to-image multigranular alignment</li>
+                        <li>Logical query reasoning over KGs</li>
+                        <li>Graph-based rationale learning</li>
+                        <li>Zero-shot cross-domain transfer</li>
                     </ul>
-                </div>                
+                </div>
             </div>
         </div>
         <div class="mila-visual">
@@ -677,10 +644,10 @@
 <section id="teaching" class="wrapper mila-section mila-section--alt">
     <div class="mila-inner mila-inner--reverse">
         <div class="mila-text">
-            
-            <h2 class="mila-heading">Teaching</h2>
+            <div class="mila-label">Teaching</div>
+            <h2 class="mila-heading">Courses Taught</h2>
             <p class="mila-desc">
-                From theory to applied AI: across NYCU, The University of Auckland, and SMU.
+                From theory to applied AI — spanning NYCU, The University of Auckland, and SMU.
             </p>
             <div class="mila-course-grid">
                 <div class="mila-course-col">
