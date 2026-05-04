@@ -166,8 +166,18 @@
     /* Social Icons - After Title */
     .social-icons {
         display: flex;
-        gap: 15px;  /* Reduced from 12px */
-        margin-bottom: 8px;  /* Reduced from 25px */
+        gap: 15px;
+        margin-bottom: 8px;
+        flex-wrap: wrap;
+    }
+
+    .social-icons ul.icons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
     
     .social-icons a {
@@ -217,6 +227,184 @@
     .leader-info .contact a:hover {
         color: #1a3d6b;
         text-decoration: underline;
+    }
+
+    /* =============================================
+       MOBILE RESPONSIVE STYLES
+       ============================================= */
+
+    /* Tablet: 768px and below */
+    @media (max-width: 768px) {
+
+        /* Nav: wrap links and reduce spacing */
+        nav {
+            padding: 10px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 4px;
+        }
+
+        nav a {
+            margin: 4px 10px;
+            font-size: 0.95em;
+        }
+
+        /* Container: tighter padding */
+        .container {
+            padding: 20px 14px 30px 14px;
+        }
+
+        /* Lab header: stack vertically instead of side-by-side */
+        .lab-header {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
+            margin-bottom: 30px !important;
+        }
+
+        /* Lab logo: full width, smaller image */
+        .lab-logo-section {
+            padding: 16px;
+        }
+
+        .lab-logo {
+            width: 100%;
+            max-width: 260px;
+            height: auto;
+        }
+
+        /* Leader info: normal flow */
+        .leader-info {
+            padding: 0;
+        }
+
+        .leader-info h1,
+        .leader-info h3 {
+            font-size: 1.6em !important;
+        }
+
+        .leader-info .title {
+            font-size: 1.1em !important;
+        }
+
+        /* Social icons: slightly smaller on mobile */
+        .social-icons img,
+        .social-icons .profile-icon {
+            width: 36px !important;
+            height: 36px !important;
+        }
+
+        /* Bio / research / teaching sections */
+        .wrapper .inner {
+            padding: 20px 0 !important;
+        }
+
+        /* image2 + content2 side-by-side → stack */
+        .spotlight {
+            display: block !important;
+        }
+
+        .image2 {
+            display: block;
+            width: 100% !important;
+            max-width: 100%;
+            margin: 0 0 16px 0;
+        }
+
+        .image2 img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .content2 {
+            width: 100% !important;
+            padding: 0 !important;
+        }
+
+        /* Publication section */
+        .public-item {
+            padding: 12px 0;
+        }
+
+        /* Authors: allow wrapping on mobile */
+        .authors {
+            white-space: normal !important;
+            overflow-x: visible !important;
+        }
+
+        /* h2 headings */
+        h2 {
+            font-size: 1.4em !important;
+        }
+
+        /* Footer icons */
+        #footer {
+            text-align: center;
+            padding: 20px 14px;
+        }
+
+        #footer .icons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 0;
+            list-style: none;
+        }
+    }
+
+    /* Small phones: 480px and below */
+    @media (max-width: 480px) {
+
+        nav a {
+            font-size: 0.85em;
+            margin: 3px 8px;
+        }
+
+        .container {
+            padding: 14px 10px 24px 10px;
+        }
+
+        .leader-info h1,
+        .leader-info h3 {
+            font-size: 1.35em !important;
+        }
+
+        .leader-info .title {
+            font-size: 1em !important;
+        }
+
+        .lab-logo {
+            max-width: 200px;
+        }
+
+        h2 {
+            font-size: 1.25em !important;
+        }
+
+        /* Make publication titles readable */
+        .ptitle strong {
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        .leader-info .contact p {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        /* Social icon row: wrap cleanly */
+        .social-icons {
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .social-icons img,
+        .social-icons .profile-icon {
+            width: 32px !important;
+            height: 32px !important;
+        }
     }
     </style>
 		
