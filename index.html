@@ -12,7 +12,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-        /* ── Reset & Base ─────────────────────────── */
+        /* ── Reset ──────────────────────────────────── */
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
@@ -22,457 +22,516 @@
             background: #fff;
         }
 
-        /* ── Navigation ─────────────────────────────── */
+        /* ── Nav ────────────────────────────────────── */
         nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            position: sticky; top: 0; z-index: 100;
             background: #1e2a3a;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
+            display: flex; justify-content: center; flex-wrap: wrap;
             box-shadow: 0 2px 12px rgba(0,0,0,0.2);
         }
-
         nav a {
-            color: #c8d8ea;
-            text-decoration: none;
-            font-size: 0.88em;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            padding: 15px 28px;
+            color: #c8d8ea; text-decoration: none;
+            font-size: 0.82em; font-weight: 700;
+            letter-spacing: 0.08em; text-transform: uppercase;
+            padding: 15px 26px;
             border-bottom: 3px solid transparent;
             transition: color 0.2s, border-color 0.2s, background 0.2s;
-            white-space: nowrap;
         }
-
-        nav a:hover {
-            color: #fff;
-            border-bottom-color: #5b9bd5;
-            background: rgba(255,255,255,0.06);
-        }
+        nav a:hover { color:#fff; border-bottom-color:#5b9bd5; background:rgba(255,255,255,0.06); }
 
         /* ── Container ───────────────────────────────── */
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 40px 28px 60px;
-        }
+        .container { max-width: 960px; margin: 0 auto; padding: 44px 28px 60px; }
 
-        /* ── Section h2 headings ─────────────────────── */
+        /* ── h2 ─────────────────────────────────────── */
         h2 {
-            color: #1e2a3a;
-            font-size: 1.45em;
-            font-weight: 700;
+            color: #1e2a3a; font-size: 1.4em; font-weight: 700;
             border-bottom: 3px solid #5b9bd5;
-            padding-bottom: 8px;
-            margin-bottom: 22px;
+            padding-bottom: 8px; margin-bottom: 22px;
         }
 
-        /* ═══════════════════════════════════════════════
-           LAB HEADER
-        ═══════════════════════════════════════════════ */
+        /* ══════════════════════════════════════════════
+           HEADER — two-column card on desktop,
+                    centered single-column on mobile
+        ══════════════════════════════════════════════ */
         .lab-header {
             display: grid;
-            grid-template-columns: 260px 1fr;
+            grid-template-columns: 230px 1fr;
             gap: 36px;
             margin-bottom: 44px;
-            align-items: start;
+            align-items: center;           /* vertically center both cols */
         }
 
+        /* LEFT: logo card */
         .lab-logo-section {
             text-align: center;
-            padding: 20px 14px;
+            padding: 22px 16px;
             background: #f4f7fb;
-            border-radius: 12px;
+            border-radius: 14px;
             border: 1px solid #dde6f0;
         }
-
         .lab-logo {
-            width: 100%;
-            max-width: 220px;
-            height: auto;
-            object-fit: contain;
-            display: block;
-            margin: 0 auto 10px;
+            width: 100%; max-width: 200px; height: auto;
+            object-fit: contain; display: block; margin: 0 auto 12px;
         }
-
         .lab-logo-section h2 {
-            font-size: 0.88em;
-            color: #1e2a3a;
-            border: none;
-            padding: 0;
-            margin: 0;
-            font-weight: 700;
-            line-height: 1.5;
+            font-size: 1.4em; color: #1e2a3a;
+            border: none; padding: 0; margin: 0;
+            font-weight: 700; line-height: 1.5;
         }
+        .lab-logo-section h3 { font-size: 1.4em; color: #5b7a99; font-weight:500; margin-top:3px; }
 
-        .lab-logo-section h3 {
-            font-size: 0.8em;
-            color: #5b7a99;
-            font-weight: 500;
-            margin-top: 3px;
+        /* RIGHT: leader info — centred within its column */
+        .leader-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;      /* left-align text */
+            justify-content: center;
+            padding: 8px 0;
         }
-
-        /* ── Leader Info ─────────────────────────────── */
-        .leader-info { padding: 2px 0 0; }
 
         .leader-info h3 {
-            font-size: 1.85em;
-            color: #1e2a3a;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 5px;
+            font-size: 1.2em; color: #1e2a3a;
+            font-weight: 700; line-height: 1.15; margin-bottom: 4px;
         }
-
         .leader-info .title {
-            font-size: 1.05em;
-            color: #2c5aa0;
-            font-weight: 600;
-            margin-bottom: 14px;
+            font-size: 1.1em; color: #2c5aa0;
+            font-weight: 600; margin-bottom: 14px;
         }
 
         /* Social icons */
-        .social-icons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 14px;
-        }
-
+        .social-icons { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
         .social-icons ul.icons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            list-style: none;
-            padding: 0;
-            margin: 0;
+            display:flex; flex-wrap:wrap; gap:8px;
+            list-style:none; padding:0; margin:0;
         }
-
         .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 38px;
-            height: 38px;
-            border-radius: 8px;
-            background: #f0f4f9;
-            border: 1px solid #dde6f0;
+            display:inline-flex; align-items:center; justify-content:center;
+            width:38px; height:38px; border-radius:8px;
+            background:#f0f4f9; border:1px solid #dde6f0;
             transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
         }
-
         .social-icons a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(44,90,160,0.18);
-            background: #e2edf8;
+            transform:translateY(-3px);
+            box-shadow:0 4px 12px rgba(44,90,160,0.18);
+            background:#e2edf8;
         }
+        .social-icons img { width:19px!important; height:19px!important; object-fit:contain; }
 
-        .social-icons img {
-            width: 20px !important;
-            height: 20px !important;
-            object-fit: contain;
-        }
-
-        .leader-info .affiliation {
-            font-size: 0.93em;
-            color: #555;
-            line-height: 1.65;
-        }
-
-        .leader-info .affiliation p { margin: 2px 0; }
+        .leader-info .affiliation { font-size:0.92em; color:#555; line-height:1.7; }
+        .leader-info .affiliation p { margin:1px 0; }
 
         .leader-info .contact {
-            margin-top: 14px;
-            padding-top: 14px;
-            border-top: 1px solid #e0e8f0;
+            margin-top:14px; padding-top:14px;
+            border-top:1px solid #e0e8f0; width:100%;
         }
+        .leader-info .contact p { color:#555; margin:3px 0; font-size:0.9em; line-height:1.65; }
+        .leader-info .contact a { color:#2c5aa0; text-decoration:none; }
+        .leader-info .contact a:hover { text-decoration:underline; }
 
-        .leader-info .contact p {
-            color: #555;
-            margin: 4px 0;
-            font-size: 0.91em;
-            line-height: 1.6;
-        }
-
-        .leader-info .contact a { color: #2c5aa0; text-decoration: none; }
-        .leader-info .contact a:hover { text-decoration: underline; }
-
-        /* ═══════════════════════════════════════════════
-           BIO — card with subtle gradient
-        ═══════════════════════════════════════════════ */
+        /* ══════════════════════════════════════════════
+           BIO — full-width card
+        ══════════════════════════════════════════════ */
         #bio .inner {
-            background: linear-gradient(130deg, #f0f6fd 0%, #e8f1fb 100%);
-            border-radius: 14px;
-            border: 1px solid #d8e6f2;
-            padding: 28px 36px;
-            margin-bottom: 4px;
+            background: linear-gradient(130deg,#f0f6fd 0%,#e8f1fb 100%);
+            border-radius:14px; border:1px solid #d8e6f2;
+            padding:28px 36px; margin-bottom:4px;
         }
+        #bio .spotlight { display:block; }
+        #bio p { font-size:0.96em; line-height:1.9; color:#333; }
+        #bio p a { color:#2c5aa0; text-decoration:none; }
+        #bio p a:hover { text-decoration:underline; }
 
-        #bio .spotlight { display: block; }  /* override grid for bio */
+        /* ══════════════════════════════════════════════
+           RESEARCH & TEACHING
+           Desktop: image LEFT (rectangle), content RIGHT
+           Mobile: image hidden or shown as banner
+        ══════════════════════════════════════════════ */
+        #research .inner, #teaching .inner { padding:4px 0 32px; }
 
-        #bio p {
-            font-size: 0.96em;
-            line-height: 1.9;
-            color: #333;
-            max-width: 100%;
-        }
-
-        #bio p a { color: #2c5aa0; text-decoration: none; }
-        #bio p a:hover { text-decoration: underline; }
-
-        /* ═══════════════════════════════════════════════
-           RESEARCH & TEACHING — image + content side-by-side
-        ═══════════════════════════════════════════════ */
-        #research .inner,
-        #teaching .inner {
-            padding: 4px 0 28px;
-        }
-
-        .spotlight {
+        /* The spotlight grid for research/teaching only */
+        #research .spotlight,
+        #teaching .spotlight {
             display: grid;
-            grid-template-columns: 210px 1fr;
+            grid-template-columns: 200px 1fr;
             gap: 32px;
             align-items: start;
         }
 
         .image2 {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+            border-radius:12px; overflow:hidden;
+            box-shadow:0 4px 16px rgba(0,0,0,0.10);
         }
-
         .image2 img {
-            width: 100%;
-            height: 195px;
-            object-fit: cover;
-            display: block;
+            width:100%; height:220px;
+            object-fit:cover; object-position:center;
+            display:block;
+            border-radius:12px;            /* rectangle, not oval */
         }
 
-        .content2 { padding: 2px 0; }
-
+        /* Content area */
+        .content2 { padding:2px 0; }
         .content2 h3 {
-            font-size: 1.2em;
-            color: #1e2a3a;
-            font-weight: 700;
-            margin-bottom: 14px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #e0e8f2;
+            font-size:1.15em; color:#1e2a3a; font-weight:700;
+            margin-bottom:14px; padding-bottom:8px;
+            border-bottom:2px solid #e0e8f2;
         }
-
-        /* Research category labels */
         .content2 b {
-            display: block;
-            color: #2c5aa0;
-            font-size: 0.85em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin: 14px 0 5px;
+            display:block; color:#2c5aa0;
+            font-size:0.82em; font-weight:700;
+            text-transform:uppercase; letter-spacing:0.06em;
+            margin:14px 0 5px;
         }
-
-        .content2 ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
+        .content2 ul { list-style:none; padding:0; margin:0; }
         .content2 ul li {
-            font-size: 0.91em;
-            color: #444;
-            padding: 3px 0 3px 16px;
-            position: relative;
-            line-height: 1.5;
+            font-size:0.91em; color:#444;
+            padding:3px 0 3px 16px; position:relative; line-height:1.5;
         }
-
         .content2 ul li::before {
-            content: "›";
-            position: absolute;
-            left: 2px;
-            color: #5b9bd5;
-            font-weight: 700;
+            content:"›"; position:absolute; left:2px;
+            color:#5b9bd5; font-weight:700;
         }
 
-        /* Teaching bare <li> items (not inside <ul>) */
+        /* Teaching bare <li> */
         #teaching .content2 > li {
-            display: block;
-            font-size: 0.91em;
-            color: #444;
-            padding: 4px 0 4px 18px;
-            position: relative;
-            line-height: 1.5;
-            list-style: none;
+            display:block; font-size:0.91em; color:#444;
+            padding:4px 0 4px 18px; position:relative;
+            line-height:1.5; list-style:none;
         }
-
         #teaching .content2 > li::before {
-            content: "›";
-            position: absolute;
-            left: 2px;
-            color: #5b9bd5;
-            font-weight: 700;
+            content:"›"; position:absolute; left:2px;
+            color:#5b9bd5; font-weight:700;
         }
 
-        /* ═══════════════════════════════════════════════
-           PUBLICATIONS — left-aligned, clean list
-        ═══════════════════════════════════════════════ */
-        #pub .inner { padding: 4px 0 28px; }
-
-        .spotlight2 .content { padding: 0; }
-
+        /* ══════════════════════════════════════════════
+           PUBLICATIONS
+        ══════════════════════════════════════════════ */
+        #pub .inner { padding:4px 0 28px; }
+        .spotlight2 .content { padding:0; }
         .spotlight2 .content h3 {
-            font-size: 1.2em;
-            color: #1e2a3a;
-            font-weight: 700;
-            margin-bottom: 18px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #e0e8f2;
+            font-size:1.15em; color:#1e2a3a; font-weight:700;
+            margin-bottom:18px; padding-bottom:8px;
+            border-bottom:2px solid #e0e8f2;
         }
-
         .public-item {
-            padding: 14px 0;
-            border-bottom: 1px solid #eef2f7;
-            text-align: left;
+            padding:14px 0; border-bottom:1px solid #eef2f7; text-align:left;
         }
-
-        .public-item:last-child { border-bottom: none; }
-
-        .item-icon-div { padding: 0; }
-
-        /* Paper title */
+        .public-item:last-child { border-bottom:none; }
+        .item-icon-div { padding:0; }
         .ptitle strong {
-            display: block;
-            font-size: 0.95em;
-            font-weight: 700;
-            color: #1a2d48;
-            line-height: 1.55;
-            margin-bottom: 5px;
+            display:block; font-size:0.94em; font-weight:700;
+            color:#1a2d48; line-height:1.55; margin-bottom:5px;
         }
-
-        /* PDF / link badge inline with title */
         .ptitle a {
-            font-size: 0.78em;
-            font-weight: 600;
-            color: #2c5aa0;
-            text-decoration: none;
-            background: #eef3fb;
-            padding: 1px 7px;
-            border-radius: 4px;
-            margin-left: 4px;
-            vertical-align: middle;
-            transition: background 0.2s;
+            font-size:0.77em; font-weight:600; color:#2c5aa0;
+            text-decoration:none; background:#eef3fb;
+            padding:1px 7px; border-radius:4px; margin-left:4px;
+            vertical-align:middle; transition:background 0.2s;
         }
-
-        .ptitle a:hover { background: #d4e5f8; }
-
-        /* Authors */
+        .ptitle a:hover { background:#d4e5f8; }
         .authors {
-            display: block;
-            white-space: normal;
-            overflow: visible;
-            font-size: 0.86em;
-            color: #666;
-            font-style: italic;
-            margin: 3px 0 6px;
-            line-height: 1.5;
+            display:block; white-space:normal; overflow:visible;
+            font-size:0.85em; color:#666; font-style:italic;
+            margin:3px 0 6px; line-height:1.5;
         }
-
-
-
+        .item-icon-div > div {
+            display:inline-block; font-size:0.8em; color:#1e4a80;
+            font-weight:600; 
+/*             background:#edf4fc; */
+/*             border:1px solid #ccdff5; */
+/*             padding:2px 10px; border-radius:20px; margin-top:1px; line-height:1.6; */
+        }
         .item-icon-div > div em,
-        .item-icon-div > div span { font-style: normal; }
+        .item-icon-div > div span { font-style:normal; }
 
-        /* ═══════════════════════════════════════════════
+        /* ══════════════════════════════════════════════
            FOOTER
-        ═══════════════════════════════════════════════ */
+        ══════════════════════════════════════════════ */
         #footer {
-            background: #f4f7fb;
-            border-top: 1px solid #dde6f0;
-            padding: 30px 24px 24px;
-            text-align: center;
+            background:#f4f7fb; border-top:1px solid #dde6f0;
+            padding:30px 24px 24px; text-align:center;
         }
-
-        #footer h3 {
-            color: #1e2a3a;
-            font-size: 0.95em;
-            font-weight: 600;
-            margin-bottom: 14px;
-            letter-spacing: 0.04em;
-        }
-
+        #footer h3 { color:#1e2a3a; font-size:0.9em; font-weight:600; margin-bottom:14px; }
         #footer .icons {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            list-style: none;
-            padding: 0;
-            margin: 0 0 14px;
+            display:flex; justify-content:center; flex-wrap:wrap;
+            gap:10px; list-style:none; padding:0; margin:0 0 14px;
         }
-
         #footer .icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            background: #e5eef8;
-            border: 1px solid #ccdaf0;
-            transition: transform 0.2s, box-shadow 0.2s;
+            display:inline-flex; align-items:center; justify-content:center;
+            width:42px; height:42px; border-radius:10px;
+            background:#e5eef8; border:1px solid #ccdaf0;
+            transition:transform 0.2s, box-shadow 0.2s;
         }
+        #footer .icons a:hover { transform:translateY(-3px); box-shadow:0 4px 12px rgba(44,90,160,0.2); }
+        #footer .icons img { width:20px; height:20px; object-fit:contain; }
+        .copyright { font-size:0.8em; color:#999; }
+        .copyright a { color:#5b9bd5; text-decoration:none; }
 
-        #footer .icons a:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(44,90,160,0.2);
-        }
-
-        #footer .icons img { width: 20px; height: 20px; object-fit: contain; }
-
-        .copyright { font-size: 0.8em; color: #999; }
-        .copyright a { color: #5b9bd5; text-decoration: none; }
-
-        /* ═══════════════════════════════════════════════
-           MOBILE — tablet ≤ 768px
-        ═══════════════════════════════════════════════ */
+        /* ══════════════════════════════════════════════
+           MOBILE  ≤ 768px
+           Header: logo top-centred, info centred below
+        ══════════════════════════════════════════════ */
         @media (max-width: 768px) {
-            nav a { padding: 11px 18px; font-size: 0.8em; }
+            nav a { padding:11px 16px; font-size:0.78em; }
+            .container { padding:20px 16px 44px; }
 
-            .container { padding: 22px 16px 44px; }
-
+            /* Header: stack, everything centred */
             .lab-header {
                 grid-template-columns: 1fr;
-                gap: 18px;
+                gap: 0;
                 margin-bottom: 28px;
             }
 
-            .lab-logo { max-width: 190px; }
-            .leader-info h3 { font-size: 1.5em; }
-
-            #bio .inner { padding: 20px 22px; }
-
-            .spotlight {
-                grid-template-columns: 1fr;
-                gap: 18px;
+            .lab-logo-section {
+                border-radius: 14px 14px 0 0;
+                border-bottom: none;
+                padding: 22px 16px 18px;
             }
 
-            .image2 img { height: 175px; }
+            .lab-logo { max-width: 170px; }
 
-            h2 { font-size: 1.25em; }
+            /* Leader info: centred card that joins below logo card */
+            .leader-info {
+                align-items: center;          /* centre all children */
+                text-align: center;
+                background: #f4f7fb;
+                border: 1px solid #dde6f0;
+                border-top: none;
+                border-radius: 0 0 14px 14px;
+                padding: 20px 20px 22px;
+            }
+
+            .leader-info h3 { font-size: 1.5em; text-align: center; }
+            .leader-info .title { text-align: center; }
+
+            .social-icons { justify-content: center; }
+            .social-icons ul.icons { justify-content: center; }
+
+            .leader-info .affiliation { text-align: center; }
+            .leader-info .contact {
+                text-align: left;           /* contact block stays readable */
+                width: auto;
+            }
+
+            #bio .inner { padding: 20px 20px; }
+
+            /* Research/Teaching: stack, hide image or show as banner */
+            #research .spotlight,
+            #teaching .spotlight {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .image2 img { height: 160px; }
+
+            h2 { font-size: 1.2em; }
         }
 
-        /* Mobile ≤ 480px */
         @media (max-width: 480px) {
-            nav a { padding: 9px 12px; font-size: 0.75em; letter-spacing: 0.04em; }
-            .container { padding: 16px 12px 36px; }
-            .leader-info h3 { font-size: 1.3em; }
-            .leader-info .title { font-size: 0.97em; }
-            .social-icons a { width: 34px; height: 34px; }
-            .social-icons img { width: 17px !important; height: 17px !important; }
-            h2 { font-size: 1.12em; }
-            #bio .inner { padding: 16px 18px; }
-            .ptitle strong { font-size: 0.91em; }
-            .content2 h3 { font-size: 1.1em; }
+            nav a { padding:9px 12px; font-size:0.73em; }
+            .container { padding:14px 12px 36px; }
+            .leader-info h3 { font-size:1.25em; }
+            .leader-info .title { font-size:0.95em; }
+            h2 { font-size:1.1em; }
+            #bio .inner { padding:16px 16px; }
+            .ptitle strong { font-size:0.9em; }
         }
+
+        /* ══════════════════════════════════════════════
+           MILA-STYLE SECTIONS (Research + Teaching)
+        ══════════════════════════════════════════════ */
+        .mila-section {
+            padding: 0;
+            background: #f7f8fa;
+            border-top: 1px solid #e8edf4;
+        }
+        .mila-section--alt {
+            background: #fff;
+        }
+
+        .mila-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 72px 28px;
+            display: grid;
+            grid-template-columns: 1fr 440px;
+            gap: 64px;
+            align-items: center;
+        }
+
+        /* Reverse: image LEFT, text RIGHT */
+        .mila-inner--reverse {
+            grid-template-columns: 440px 1fr;
+        }
+        .mila-inner--reverse .mila-text  { order: 2; }
+        .mila-inner--reverse .mila-visual { order: 1; }
+
+        /* ── Left text column ── */
+        .mila-label {
+            font-size: 0.72em;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #2c5aa0;
+            margin-bottom: 10px;
+        }
+
+        .mila-heading {
+            font-size: 2.1em;
+            font-weight: 800;
+            color: #1a2540;
+            line-height: 1.15;
+            margin-bottom: 18px;
+            border: none;
+            padding: 0;
+        }
+
+        .mila-desc {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.8;
+            max-width: 480px;
+            margin-bottom: 28px;
+        }
+
+        /* Topic groups */
+        .mila-topics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px 24px;
+        }
+
+        .mila-topic-group ul {
+            list-style: none;
+            padding: 0;
+            margin: 6px 0 0;
+        }
+
+        .mila-topic-group ul li {
+            font-size: 0.87em;
+            color: #444;
+            padding: 3px 0 3px 14px;
+            position: relative;
+            line-height: 1.45;
+        }
+
+        .mila-topic-group ul li::before {
+            content: "›";
+            position: absolute;
+            left: 1px;
+            color: #5b9bd5;
+            font-weight: 700;
+        }
+
+        .mila-topic-label {
+            display: block;
+            font-size: 0.76em;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #2c5aa0;
+            margin-bottom: 2px;
+        }
+
+        /* Course grid (teaching) */
+        .mila-course-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px 24px;
+        }
+
+        .mila-course-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 6px 0 0;
+        }
+
+        .mila-course-col ul li {
+            font-size: 0.87em;
+            color: #444;
+            padding: 3px 0 3px 14px;
+            position: relative;
+            line-height: 1.45;
+        }
+
+        .mila-course-col ul li::before {
+            content: "›";
+            position: absolute;
+            left: 1px;
+            color: #5b9bd5;
+            font-weight: 700;
+        }
+
+        /* ── Right visual column ── */
+        .mila-visual {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mila-img-frame {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1 / 1;
+            border-radius: 28px;
+            overflow: hidden;
+        }
+
+        /* Coloured background square (Mila-style) */
+        .mila-img-frame::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 28px;
+            z-index: 0;
+        }
+
+        .mila-img-frame--teal::before  { background: #d0f0ec; }
+        .mila-img-frame--amber::before { background: #fdeec8; }
+
+        /* Circle crop inset */
+        .mila-img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 86%;
+            height: 86%;
+            object-fit: cover;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.14);
+            transition: transform 0.4s ease;
+        }
+
+        .mila-img-frame:hover .mila-img {
+            transform: translate(-50%, -50%) scale(1.04);
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 768px) {
+            .mila-inner,
+            .mila-inner--reverse {
+                grid-template-columns: 1fr;
+                gap: 32px;
+                padding: 48px 16px;
+            }
+
+            .mila-inner--reverse .mila-text  { order: 1; }
+            .mila-inner--reverse .mila-visual { order: 2; }
+
+            .mila-heading { font-size: 1.6em; }
+            .mila-img-frame { max-width: 280px; margin: 0 auto; }
+
+            .mila-topics,
+            .mila-course-grid { grid-template-columns: 1fr; gap: 14px; }
+        }
+
+        @media (max-width: 480px) {
+            .mila-inner { padding: 36px 12px; }
+            .mila-heading { font-size: 1.35em; }
+        }
+
     </style>
 		
 	</head>
@@ -558,75 +617,103 @@
 		
 			<section id="bio" class="wrapper">
 				<div class="inner">
-					<p style="">
+					<p>
 							<strong>Meng-Fen Chiang</strong> is an Assistant Professor in the <a href="https://ece.nycu.edu.tw/home.aspx">Department of Electronics and Electrical Engineering (ECE)</a> at <a href="https://www.nycu.edu.tw/nycu/ch/index">National Yang Ming Chiao Tung University (NYCU)</a>. 
-                			Her research focuses on <strong>Reliable Multimodal Intelligence</strong>, spanning Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and Explainable Generative AI.
-                			Prior to NYCU, she was a Lecturer at <a href="https://www.auckland.ac.nz/">The University of Auckland</a> and a Researcher/Adjunct Professor at the <strong>Living Analytics Research Centre</strong> in Singapore. She received her Ph.D. from National Chiao-Tung University.
+                			Her research focuses on <strong>Trustworthy Multimodal Intelligence</strong>, spanning Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and Knowledge-Grounded Reasoning Agents.
+                			Prior to NYCU, she was a Lecturer at <a href="https://www.auckland.ac.nz/">The University of Auckland (UoA)</a>, a full-time Research Scientist at the <a href="https://www.smu.edu.sg/sites/default/files/archives/larc/larc.smu.edu.sg/home.html">Living Analytics Research Centre</a> in Singapore, and Adjunct Professor at <a href="https://www.smu.edu.sg/">Singapore Management University (SMU)</a>. She received her Ph.D. from National Chiao-Tung University.
                 		</p>
-					</section>
 				</div>
-				
 			</section>
 
-			<section id="research" class="wrapper">
-				<div class="inner">
-					<section class="spotlight">
-						<div class="image2"><img src="images/graph_view.png" alt="" /></div>
-            			<div class="content2">
-                			<h3>Research Interests</h3>
-                			<b>Multimodal Generative AI</b>
-                			<ul>
-                    			<li>Linguistic Decomposition for T2I Diffusion</li>
-                    			<li>Relation-Aware Multimodal Reasoning</li>
-                			</ul>
-                			<b>Knowledge-Enhanced LLMs</b>
-                			<ul>
-                    			<li>Knowledge Graph Reasoning</li>
-                    			<li>Logical Query Reasoning over Knowledge Graphs</li>
-                    			<li>Neutralized Zero-shot Transfer</li>
-                			</ul>
-                			<b>Responsible AI</b>
-                			<ul>
-                    			<li>Data Privacy Auditing in RAG Systems</li>
-                    			<li>Metric-Guided Reliable Explainability</li>
-                    			<li>Rationale Learning and Editing</li>
-                </ul>
+			<section id="research" class="wrapper mila-section">
+    <div class="mila-inner">
+        <div class="mila-text">
+            <h2 class="mila-heading">Knowledge-Grounded Responsible AI</h2>
+            <p class="mila-desc">
+                Building AI systems that reason faithfully over structured and multimodal knowledge, 
+                trustworthy, explainable, and privacy-aware from the ground up.
+            </p>
+            <div class="mila-topics">
+                <div class="mila-topic-group">
+                    <span class="mila-topic-label">Multimodal Reasoning</span>
+                    <ul>
+                        <li>Relation-aware analogical reasoning</li>
+                        <li>Faithful persona steering</li>
+						<li>Hypergraph-structured RAG for N-ary facts</li>
+						<li>Knowledge-conflict resolution in LLMs</li>
+						<li>Logical query reasoning over knolwedge graphs</li>
+                    </ul>
+                </div>
+                <div class="mila-topic-group">
+                    <span class="mila-topic-label">Responsible AI</span>
+                    <ul>
+                        <li>Hallucination detection for domain LLMs</li>
+                        <li>Privacy auditing in RAG systems</li>     
+                        <li>Zero-shot cross-domain transfer</li> 
+                        <li>Editable rationale learning</li>    
+                        <li>Metric-guided explainability</li>                 
+                    </ul>
+                </div>
+                <div class="mila-topic-group">
+                    <span class="mila-topic-label">Multimodal Generative AI</span>
+                    <ul>     
+                        <li>Text-to-image multigranular alignment</li>                        
+                    </ul>
+                </div>                
             </div>
-						</div>
-					</section>
-				</div>
-			</section>
+        </div>
+        <div class="mila-visual">
+            <div class="mila-img-frame mila-img-frame--teal">
+                <img src="images/graph_view.png" alt="Research" class="mila-img">
+            </div>
+        </div>
+    </div>
+</section>
 
-			<section id="teaching" class="wrapper">
-				<div class="inner alt">
-					<section class="spotlight">
-						<div class="image2"><img src="images/teaching.jpg" alt="" /></div>
-						<div class="content2">
-							<h3>Teaching</h3>
-							<li>Introduction to Machine Learning</li>
-							<li>Data Science</li>	
-<!-- 
-							<li> </li>
-							<h3>The University of Auckland</h3>
- -->
-<!-- 							<li>COMPSCI 220: <a href="https://ankechiang.github.io/cs220_swu.html">Algorithms and Data Structures (SWU), 2021 </a></li> -->
-							<li>Advanced Topics in Machine Learning</li>													
-							<li>Advanced Machine Learning</li>
-							<li>Machine Learning</li>
-							<li>Algorithms for Massive Data</li>
-							<li>Algorithms and Data Structures</li>	
-							<li>Discrete Mathematics</li>						
-							<li>Advanced Topics in Database Systems</li>
-							<li>Fundamentals of Database Systems</li>
-							<li>Operating Systems</li>
-						</div>
-					</section>
-				</div>
-			</section>
+<section id="teaching" class="wrapper mila-section mila-section--alt">
+    <div class="mila-inner mila-inner--reverse">
+        <div class="mila-text">
+            <h2 class="mila-heading">Teaching</h2>
 
+            <p class="mila-desc">
+                From foundations to frontiers, courses spanning theory, algorithms, and applied AI,
+                 across NYCU, The University of Auckland (UoA), and Singapore Management University (SMU).
+            </p>
+            <div class="mila-course-grid">
+                <div class="mila-course-col">
+                    <span class="mila-topic-label">Data Science Fundamentals</span>
+                    <ul>
+                        <li>Introduction to Data Science</li>
+                        <li>Advanced Topics in Database Systems</li>
+                        <li>Fundamentals of Database Systems</li>                        
+                    </ul>
+                    <span class="mila-topic-label" style="margin-top:14px">AI &amp; ML</span>
+                    <ul>
+                        <li>Introduction to Machine Learning</li>
+                        <li>Advanced Machine Learning</li>
+                        <li>Advanced Topics in Machine Learning</li>
+                    </ul>
+                </div>
+                <div class="mila-course-col">
+                    <span class="mila-topic-label">Systems &amp; Theory</span>
+                    <ul>
+                        <li>Discrete Mathematics</li>
+                        <li>Algorithms for Massive Data</li>
+                        <li>Algorithms and Data Structures</li>
+                        <li>Operating Systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mila-visual">
+            <div class="mila-img-frame mila-img-frame--amber">
+                <img src="images/teaching.jpg" alt="Teaching" class="mila-img">
+            </div>
+        </div>
+    </div>
+</section>
 
-
-			<section id="pub" class="wrapper">
+<section id="pub" class="wrapper">
 				<div class="inner alt">
 					<section class="spotlight2">
 						<div class="content">
