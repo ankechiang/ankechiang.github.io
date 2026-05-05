@@ -380,22 +380,17 @@
         .mila-inner--reverse .mila-visual { order: 1; }
 
         /* ── Text column ── */
-
-        .mila-sublabel {
-            font-size: 0.7em; font-weight: 800;
-            letter-spacing: 0.14em; text-transform: uppercase;
-            color: #2c5aa0; margin-bottom: 12px; margin-top: 4px;
-        }
         .mila-label {
             font-size: 0.68em; font-weight: 800;
             letter-spacing: 0.16em; text-transform: uppercase;
             color: #2c5aa0; margin-bottom: 8px;
         }
         .mila-heading {
-            font-size: 2.2em; font-weight: 900;
-            color: #111c30; line-height: 1.12;
-            margin-bottom: 6px;
+            font-size: 2em; font-weight: 800;
+            color: #1a2540; line-height: 1.15;
+            margin-bottom: 14px;
             border: none !important; padding: 0 !important;
+            /* force single line on desktop */
             white-space: nowrap;
         }
         .mila-desc {
@@ -502,133 +497,189 @@
         }
 
 
+        /* Bio card: match vr-inner alignment (1040px / 40px sides) */
+        #bio .wrapper-inner-align {
+            max-width: 1040px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        @media (max-width: 1060px) { #bio .wrapper-inner-align { padding: 0 28px; } }
+        @media (max-width: 768px)  { #bio .wrapper-inner-align { padding: 0 18px; } }
+        @media (max-width: 480px)  { #bio .wrapper-inner-align { padding: 0 12px; } }
+
+
         /* ══════════════════════════════════════════════
-           VISION SECTION
+           VISION + RESEARCH SECTION (vr-)
         ══════════════════════════════════════════════ */
-        .vision-section {
-            background: #fff;
-            border-top: 4px solid #1a8a80;
+        .vision-research-section {
+            background: #f5f8fc;
+            border-top: 1px solid #e4eaf3;
             padding: 0;
         }
 
-        .vision-inner {
+        /* Inner: same max-width & side padding as bio card (1040px / 40px) */
+        .vr-inner {
             max-width: 1040px;
             margin: 0 auto;
-            padding: 60px 40px;
+            padding: 64px 40px 72px;
             display: grid;
-            grid-template-columns: 1fr 360px;
-            gap: 56px;
-            align-items: start;
+            grid-template-columns: 1fr 340px;
+            gap: 60px;
+            align-items: center;
         }
 
-        /* Header */
-        .vision-heading {
-            font-size: 3em;
-            font-weight: 300;
-            color: #111;
-            line-height: 1;
+        /* ── LEFT text ──────────────────────────────── */
+
+        /* One-liner row: "Vision" + equation side by side */
+        .vr-header-row {
+            display: flex;
+            align-items: baseline;
+            gap: 18px;
+            flex-wrap: nowrap;
             margin-bottom: 10px;
+        }
+
+        .vr-heading {
+            font-size: 2.6em;
+            font-weight: 800;
+            color: #111c30;
+            line-height: 1;
+            white-space: nowrap;
             border: none !important;
             padding: 0 !important;
+            margin: 0;
+            flex-shrink: 0;
         }
 
-        .vision-subtitle {
-            font-size: 1.15em;
-            font-weight: 500;
-            color: #1a2540;
-            line-height: 1.4;
-            margin-bottom: 6px;
-        }
-
-        .vision-lab-tag {
+        .vr-equation {
             font-size: 0.82em;
             font-weight: 700;
-            letter-spacing: 0.12em;
-            color: #1a8a80;
-            text-transform: uppercase;
-            margin-bottom: 32px;
-        }
-
-        /* Cards */
-        .vision-cards {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .vision-card {
-            border: 1px solid #dde6f0;
-            border-radius: 10px;
-            overflow: hidden;
-            background: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .vision-card-header {
-            background: #1e2a3a;
-            color: #fff;
-            font-size: 0.88em;
-            font-weight: 700;
-            padding: 12px 16px;
+            letter-spacing: 0.04em;
+            color: #2c5aa0;
             line-height: 1.3;
         }
 
-        .vision-card ul {
-            list-style: none;
-            padding: 14px 16px;
-            margin: 0;
+        .vr-desc {
+            font-size: 0.92em;
+            color: #5a6476;
+            line-height: 1.8;
+            margin-bottom: 28px;
+            max-width: 560px;
         }
 
-        .vision-card ul li {
+        /* 2×2 topic grid */
+        .vr-topics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px 28px;
+        }
+
+        .vr-topic-label {
+            display: block;
+            font-size: 0.7em;
+            font-weight: 800;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #2c5aa0;
+            margin-bottom: 5px;
+        }
+
+        .vr-topic-group ul {
+            list-style: none; padding: 0; margin: 0;
+        }
+
+        .vr-topic-group ul li {
             font-size: 0.85em;
             color: #3d4a5e;
-            padding: 4px 0 4px 14px;
+            padding: 3px 0 3px 14px;
             position: relative;
             line-height: 1.5;
         }
 
-        .vision-card ul li::before {
-            content: "•";
-            position: absolute;
-            left: 2px;
-            color: #1a8a80;
-            font-weight: 700;
+        .vr-topic-group ul li::before {
+            content: "›";
+            position: absolute; left: 2px;
+            color: #5b9bd5; font-weight: 700;
         }
 
-        /* SVG diagram */
-        .vision-right {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding-top: 16px;
-        }
-
-        .vision-svg {
+        /* ── RIGHT visual ───────────────────────────── */
+        .vr-visual {
+            position: relative;
             width: 100%;
-            max-width: 420px;
-            height: auto;
-            overflow: visible;
+            max-width: 340px;
+            /* tall enough for card + SVG overflow at top */
+            height: 360px;
         }
 
-        /* Tablet */
-        @media (max-width: 900px) {
-            .vision-inner {
+        /* Teal card — sits flush bottom of the visual column */
+        .vr-card {
+            position: absolute;
+            bottom: 0;
+            left: 0; right: 0;
+            height: 290px;               /* card height */
+            background: linear-gradient(135deg, #1a8a80 0%, #0d5f58 100%);
+            border-radius: 24px;
+            box-shadow: 0 12px 40px rgba(26,138,128,0.28);
+        }
+
+        /* SVG: positioned so its bottom ~40px inside the card top edge
+           → creates the "pressing down on the blue edge" look */
+        .vr-svg {
+            position: absolute;
+            top: 0;                      /* SVG top = visual column top */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 260px;
+            height: 260px;
+            z-index: 2;
+            filter: drop-shadow(0 6px 20px rgba(0,0,0,0.18));
+            transition: transform 0.4s cubic-bezier(.22,.68,0,1.2);
+        }
+
+        .vr-visual:hover .vr-svg {
+            transform: translateX(-50%) translateY(-6px) scale(1.03);
+        }
+
+        /* ── Tablet ≤ 1060px ────────────────────────── */
+        @media (max-width: 1060px) {
+            .vr-inner {
+                grid-template-columns: 1fr 280px;
+                gap: 40px;
+                padding: 52px 28px 60px;
+            }
+            .vr-heading    { font-size: 2.1em; }
+            .vr-equation   { font-size: 0.76em; }
+            .vr-visual     { max-width: 280px; height: 300px; }
+            .vr-card       { height: 240px; }
+            .vr-svg        { width: 210px; height: 210px; }
+        }
+
+        /* ── Mobile ≤ 768px: stack ──────────────────── */
+        @media (max-width: 768px) {
+            .vr-inner {
                 grid-template-columns: 1fr;
                 gap: 32px;
-                padding: 48px 24px;
+                padding: 44px 18px 52px;
             }
-            .vision-right { justify-content: flex-start; }
-            .vision-svg { max-width: 360px; }
-            .vision-heading { font-size: 2.4em; }
+            .vr-visual {
+                max-width: 280px;
+                height: 300px;
+                margin: 0 auto;
+            }
+            .vr-card   { height: 240px; }
+            .vr-svg    { width: 210px; height: 210px; }
+            /* wrap heading row on mobile */
+            .vr-header-row { flex-wrap: wrap; gap: 6px; }
+            .vr-heading     { font-size: 1.9em; }
         }
 
-        /* Mobile */
-        @media (max-width: 600px) {
-            .vision-inner { padding: 36px 14px; gap: 24px; }
-            .vision-heading { font-size: 2em; }
-            .vision-subtitle { font-size: 1em; }
-            .vision-cards { grid-template-columns: 1fr; gap: 12px; }
-            .vision-svg { max-width: 300px; }
+        @media (max-width: 480px) {
+            .vr-inner      { padding: 32px 12px 40px; }
+            .vr-heading    { font-size: 1.6em; }
+            .vr-topics     { grid-template-columns: 1fr; }
+            .vr-visual     { max-width: 240px; height: 260px; }
+            .vr-card       { height: 205px; }
+            .vr-svg        { width: 180px; height: 180px; }
         }
 
     </style>
@@ -639,7 +690,7 @@
 
     		<!-- Navigation Bar -->
     		<nav>
-        		<a href="#vision">Vision</a><a href="#research">Research</a>
+        		<a href="#research">Research</a>
         		<a href="#teaching">Teaching</a>
         		<a href="#pub">Publications</a>
     		</nav>
@@ -714,7 +765,7 @@
 
 		<!-- Two -->
 		
-			<section id="bio" class="wrapper">
+			<section id="bio" class="wrapper"><div class="wrapper-inner-align">
 				<div class="inner">
 					<p>
 							<strong>Meng-Fen Chiang</strong> is an Assistant Professor in the <a href="https://ece.nycu.edu.tw/home.aspx">Department of Electronics and Electrical Engineering (ECE)</a> at <a href="https://www.nycu.edu.tw/nycu/ch/index">National Yang Ming Chiao Tung University (NYCU)</a>. 
@@ -724,84 +775,24 @@
 				</div>
 			</section>
 
-			<!-- ── Vision Section ─────────────────────────────────────── -->
-<section id="vision" class="vision-section">
-    <div class="vision-inner">
+			<section id="research" class="wrapper vision-research-section">
+    <div class="vr-inner">
 
-        <!-- Left: text cards -->
-        <div class="vision-left">
-            <div class="vision-header">
-                <div class="vision-title-block">
-                    <h2 class="vision-heading">Vision</h2>
-                    <p class="vision-subtitle">Reasoning capability + ethical accountability = AI serves humanity</p>
-                    <p class="vision-lab-tag">Knowledge Computing Lab &nbsp;·&nbsp; NYCU &nbsp;·&nbsp; ECE</p>
-                </div>
+        <!-- LEFT: all text -->
+        <div class="vr-text">
+            <!-- One-liner header row -->
+            <div class="vr-header-row">
+                <h2 class="vr-heading">Vision</h2>
+                <div class="vr-equation">Reasoning Capability + Accountability = AI Serves Humanity</div>
             </div>
-            <div class="vision-cards">
-                <div class="vision-card">
-                    <div class="vision-card-header">Socially Responsible AI</div>
-                    <ul>
-                        <li>Addressing unintended consequences of AI deployment</li>
-                        <li>Contributing to <strong>social dialogue</strong> and beneficial applications</li>
-                        <li>Privacy-preserving systems by design</li>
-                    </ul>
-                </div>
-                <div class="vision-card">
-                    <div class="vision-card-header">Trustworthy &amp; Fairness</div>
-                    <ul>
-                        <li>Tackling bias in model outputs</li>
-                        <li>Hallucination detection and mitigation</li>
-                        <li>Data privacy risk management</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right: concentric circles SVG -->
-        <div class="vision-right">
-            <svg class="vision-svg" viewBox="0 0 420 340" xmlns="http://www.w3.org/2000/svg">
-                <!-- Outer circle: Society -->
-                <circle cx="180" cy="170" r="155" fill="#e8f5f4" stroke="#1a8a80" stroke-width="2"/>
-                <!-- Middle circle: User -->
-                <circle cx="180" cy="170" r="108" fill="#ceecea" stroke="#1a8a80" stroke-width="2"/>
-                <!-- Inner circle: Model -->
-                <circle cx="180" cy="170" r="64" fill="#a0d8d4" stroke="#1a8a80" stroke-width="2"/>
-                <!-- Core: AI -->
-                <circle cx="180" cy="170" r="36" fill="#1a8a80"/>
-                <text x="180" y="176" text-anchor="middle" font-family="Arial,sans-serif" font-size="17" font-weight="800" fill="white">AI</text>
-
-                <!-- Layer labels (inside, teal) -->
-                <text x="180" y="145" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#1a8a80">Model</text>
-                <text x="180" y="82" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#1a8a80">User</text>
-                <text x="180" y="30" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" font-weight="700" fill="#1a8a80">Society</text>
-
-                <!-- Right labels (orange) -->
-                <text x="348" y="50" text-anchor="start" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#e07b00">Social Responsibility</text>
-                <text x="348" y="112" text-anchor="start" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#e07b00">Trustworthy &amp; Fairness</text>
-                <text x="348" y="165" text-anchor="start" font-family="Arial,sans-serif" font-size="12" font-weight="700" fill="#e07b00">Reasoning Capability</text>
-
-                <!-- Connector lines from circle edge to labels -->
-                <line x1="332" y1="48"  x2="346" y2="48"  stroke="#e07b00" stroke-width="1.2" opacity="0.6"/>
-                <line x1="286" y1="110" x2="346" y2="110" stroke="#e07b00" stroke-width="1.2" opacity="0.6"/>
-                <line x1="244" y1="160" x2="346" y2="160" stroke="#e07b00" stroke-width="1.2" opacity="0.6"/>
-            </svg>
-        </div>
-
-    </div>
-</section>
-
-<section id="research" class="wrapper mila-section">
-    <div class="mila-inner">
-        <div class="mila-text">
-            <h2 class="mila-heading">AI That Knows<br>What It Knows</h2>
-            <div class="mila-sublabel">Reasoning Capability + Accountability</div>
-            <p class="mila-desc">
-                Designing AI that reasons faithfully, explains itself, and respects privacy —
-                grounded in structured knowledge and built to be trusted. Contributing to <strong>social dialogue</strong> and beneficial applications
+            <p class="vr-desc">
+                Faithful reasoning · explainable outputs · privacy by design —
+                AI that earns its place in society.
             </p>
-            <div class="mila-topics">
-                <div class="mila-topic-group">
-                    <span class="mila-topic-label">Multimodal Reasoning</span>
+            <!-- 2×2 topic grid -->
+            <div class="vr-topics">
+                <div class="vr-topic-group">
+                    <span class="vr-topic-label">Multimodal Reasoning</span>
                     <ul>
                         <li>Relation-aware analogical reasoning</li>
                         <li>RAG over N-ary Hypergraphs</li>
@@ -809,23 +800,23 @@
                         <li>Logical query reasoning over KGs</li>
                     </ul>
                 </div>
-                <div class="mila-topic-group">
-                    <span class="mila-topic-label">Responsible AI</span>
+                <div class="vr-topic-group">
+                    <span class="vr-topic-label">Responsible AI</span>
                     <ul>
                         <li>LLM hallucination detection</li>
                         <li>Privacy auditing in RAG pipelines</li>
                         <li>Principle-guided medical reasoning</li>
                     </ul>
                 </div>
-                <div class="mila-topic-group">
-                    <span class="mila-topic-label">Generative AI</span>
+                <div class="vr-topic-group">
+                    <span class="vr-topic-label">Generative AI</span>
                     <ul>
                         <li>Text-to-image multigranular alignment</li>
                         <li>Knowledge-conflict resolution in LLMs</li>
                     </ul>
                 </div>
-                <div class="mila-topic-group">
-                    <span class="mila-topic-label">Explainable AI</span>
+                <div class="vr-topic-group">
+                    <span class="vr-topic-label">Explainable AI</span>
                     <ul>
                         <li>Editable rationale learning</li>
                         <li>Metric-guided explainability</li>
@@ -834,21 +825,47 @@
                 </div>
             </div>
         </div>
-        <div class="mila-visual">
-            <div class="mila-img-frame mila-img-frame--teal">
-                <img src="images/graph_view.png" alt="Research" class="mila-img">
-            </div>
+
+        <!-- RIGHT: teal card, SVG overlapping top-right corner -->
+        <div class="vr-visual">
+            <!-- Blue card behind -->
+            <div class="vr-card"></div>
+            <!-- SVG sits on top, shifted up+right so it "压在" the blue edge -->
+            <svg class="vr-svg" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="140" cy="140" r="128" fill="#cdeae8" stroke="#1a8a80" stroke-width="1.8"/>
+                <circle cx="140" cy="140" r="90"  fill="#a5d8d5" stroke="#1a8a80" stroke-width="1.8"/>
+                <circle cx="140" cy="140" r="54"  fill="#5dbdb8" stroke="#1a8a80" stroke-width="1.8"/>
+                <circle cx="140" cy="140" r="28"  fill="#1a8a80"/>
+                <text x="140" y="146" text-anchor="middle"
+                      font-family="'Segoe UI',Arial,sans-serif"
+                      font-size="14" font-weight="800" fill="white">AI</text>
+                <text x="140" y="122" text-anchor="middle"
+                      font-family="'Segoe UI',Arial,sans-serif"
+                      font-size="11" font-weight="700" fill="#0a5c56">Model</text>
+                <text x="140" y="68" text-anchor="middle"
+                      font-family="'Segoe UI',Arial,sans-serif"
+                      font-size="11" font-weight="700" fill="#0a5c56">User</text>
+                <text x="140" y="18" text-anchor="middle"
+                      font-family="'Segoe UI',Arial,sans-serif"
+                      font-size="11" font-weight="700" fill="#0a5c56">Society</text>
+                <line x1="192" y1="118" x2="216" y2="118" stroke="#d97706" stroke-width="1.2" opacity="0.65"/>
+                <line x1="228" y1="76"  x2="216" y2="76"  stroke="#d97706" stroke-width="1.2" opacity="0.65"/>
+                <line x1="268" y1="36"  x2="216" y2="36"  stroke="#d97706" stroke-width="1.2" opacity="0.65"/>
+                <text x="218" y="122" font-family="'Segoe UI',Arial,sans-serif" font-size="9.5" font-weight="800" fill="#d97706">Reasoning</text>
+                <text x="218" y="80"  font-family="'Segoe UI',Arial,sans-serif" font-size="9.5" font-weight="800" fill="#d97706">Trustworthy</text>
+                <text x="218" y="40"  font-family="'Segoe UI',Arial,sans-serif" font-size="9.5" font-weight="800" fill="#d97706">Social Resp.</text>
+            </svg>
         </div>
+
     </div>
 </section>
 
 <section id="teaching" class="wrapper mila-section mila-section--alt">
     <div class="mila-inner mila-inner--reverse">
         <div class="mila-text">
-            <div class="mila-label">Teaching</div>
-            <h2 class="mila-heading">Courses Taught</h2>
+            <h2 class="mila-heading">Teaching</h2>
             <p class="mila-desc">
-                From theory to applied AI — spanning NYCU, The University of Auckland, and SMU.
+                From theory to applied AI, across NYCU, The University of Auckland, and SMU.
             </p>
             <div class="mila-course-grid">
                 <div class="mila-course-col">
@@ -894,7 +911,7 @@
 							<h3>Publiciations</h3>
 							<div class="public-item">
 	                            <div class="item-icon-div"><span class="ptitle"><strong>Faithful Persona Steering under Incongruity via Dual-Stream Refinement </strong><br></span><span></span>
-	                                <p class="authors">Yu-An Chu, Jen-Ren Pong, Chia-Yao Yeh, Meng-Fen Chian.</p> 
+	                                <p class="authors">Yu-An Chu, Jen-Ren Pong, Chia-Yao Yeh, Meng-Fen Chiang.</p> 
 	                            	<div>Findings of the Annual Meeting of the Association for Computational Linguistics (ACL), 2026</em></span></div>
 	                            <div class="item-content"></div>
 	                        </div></br>	
