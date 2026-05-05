@@ -505,7 +505,43 @@
             .mila-course-grid { grid-template-columns: 1fr; gap: 12px; }
         }
 
-    </style>
+    
+        /* ── Lab header: wider card, better ratio ── */
+        .lab-header {
+            grid-template-columns: 300px 1fr !important;
+            gap: 40px !important;
+        }
+
+        .lab-logo-section {
+            padding: 24px 20px !important;
+        }
+
+        .lab-logo {
+            max-width: 220px !important;
+        }
+
+        .lab-logo-section h2 {
+            font-size: 1em !important;
+            white-space: nowrap;          /* prevent wrapping */
+        }
+
+        .lab-logo-section h3 {
+            font-size: 0.85em !important;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 1060px) {
+            .lab-header { grid-template-columns: 260px 1fr !important; gap: 28px !important; }
+            .lab-logo-section h2 { white-space: normal; font-size: 0.95em !important; }
+            .lab-logo { max-width: 180px !important; }
+        }
+
+        @media (max-width: 768px) {
+            .lab-header { grid-template-columns: 1fr !important; }
+            .lab-logo-section h2, .lab-logo-section h3 { white-space: normal; }
+        }
+
+</style>
 		
 	</head>
 	<body class="is-preload">
